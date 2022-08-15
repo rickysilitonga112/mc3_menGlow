@@ -24,6 +24,7 @@ struct ContentView: View {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                     } label: {
                         Text(item.timestamp!, formatter: itemFormatter)
+                            .background(kPrimaryColor)
                     }
                 }
                 .onDelete(perform: deleteItems)
