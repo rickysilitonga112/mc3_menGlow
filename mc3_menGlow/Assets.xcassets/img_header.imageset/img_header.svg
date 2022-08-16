@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="493px" height="281px" viewBox="0 0 493 281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>header</title>
+    <defs>
+        <path d="M245.5,227 C314.835397,247.293287 389.533001,291.895245 470.499618,242.316466 L470.5,270 L37.2559058,269.992342 C92.3318032,183.98007 210.34444,216.710568 245.5,227 Z" id="path-1"></path>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Routine" transform="translate(31.000000, 135.000000)">
+            <g id="header" transform="translate(-30.500000, -135.000000)">
+                <rect id="Rectangle" fill="#32342A" x="30.5" y="0" width="440" height="267"></rect>
+                <path d="M292,254.5 C341.666667,231.166667 383.833333,221.5 418.5,225.5 C453.166667,229.5 477.833333,239.166667 492.5,254.5 L434,265 C419.757532,268.534888 402.257532,269.534888 381.5,268 C360.742468,266.465112 330.909135,261.965112 292,254.5 Z" id="Path-5" fill="#B8B4AB"></path>
+                <path d="M11,205 C80,190.666667 132.833333,197.666667 169.5,226 C206.166667,254.333333 176.833333,262.666667 81.5,251 L0,265 L11,205 Z" id="Path-4" fill="#B8B4AB"></path>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Combined-Shape" fill="#F7FDFC" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
