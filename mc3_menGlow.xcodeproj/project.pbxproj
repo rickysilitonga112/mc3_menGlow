@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235ED28AA9B7900EB6B3A /* Constant.swift */; };
+		566235F028AA9BD900EB6B3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235EF28AA9BD900EB6B3A /* Theme.swift */; };
 		5684C7C528AA5C2A00A39497 /* mc3_menGlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5684C7C428AA5C2A00A39497 /* mc3_menGlowApp.swift */; };
 		5684C7C728AA5C2A00A39497 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5684C7C628AA5C2A00A39497 /* ContentView.swift */; };
 		5684C7C928AA5C2B00A39497 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5684C7C828AA5C2B00A39497 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		566235ED28AA9B7900EB6B3A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		566235EF28AA9BD900EB6B3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		5684C7C128AA5C2A00A39497 /* mc3_menGlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mc3_menGlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5684C7C428AA5C2A00A39497 /* mc3_menGlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc3_menGlowApp.swift; sourceTree = "<group>"; };
 		5684C7C628AA5C2A00A39497 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		5684C7C328AA5C2A00A39497 /* mc3_menGlow */ = {
 			isa = PBXGroup;
 			children = (
-				5684C7DB28AA5CDB00A39497 /* constant */,
+				5684C7DB28AA5CDB00A39497 /* Config */,
 				5684C7DA28AA5CC700A39497 /* core */,
 				5684C7D928AA5C6800A39497 /* viewModels */,
 				5684C7D828AA5C6100A39497 /* models */,
@@ -109,11 +113,13 @@
 			path = core;
 			sourceTree = "<group>";
 		};
-		5684C7DB28AA5CDB00A39497 /* constant */ = {
+		5684C7DB28AA5CDB00A39497 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				566235ED28AA9B7900EB6B3A /* Constant.swift */,
+				566235EF28AA9BD900EB6B3A /* Theme.swift */,
 			);
-			path = constant;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		5684C7DC28AA5CF300A39497 /* components */ = {
@@ -210,7 +216,9 @@
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
 				5684C7C728AA5C2A00A39497 /* ContentView.swift in Sources */,
 				5684C7C528AA5C2A00A39497 /* mc3_menGlowApp.swift in Sources */,
+				566235F028AA9BD900EB6B3A /* Theme.swift in Sources */,
 				5684C7D128AA5C2B00A39497 /* mc3_menGlow.xcdatamodeld in Sources */,
+				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
