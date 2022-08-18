@@ -9,39 +9,71 @@ import SwiftUI
 
 struct RoutineListView: View {
     private let screenWidth = UIScreen.screenWidth
-    @State var morningOn = true
+    
+    @StateObject var routineVM = RoutineViewModel()
     
     var body: some View {
-        VStack {
-            //                Image("img_header")
-            //                    .resizable()
-            //                    .aspectRatio(contentMode: .fit)
-            //                    .frame(width: screenWidth)
-            //                    .ignoresSafeArea()
-            
-            HStack {
-                Text("Routine List")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                Spacer()
-            } .padding()
-            
-            ZStack {
-                Image("header_morning")
+        NavigationView {
+            VStack {
+                Image("header_allpage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: screenWidth)
-
-                VStack {
-                    Toggle(isOn: $morningOn) {
-                        Text("Morning Routine")
+                    .padding(.bottom)
+                
+                ForEach($routineVM.routineList) { $routine in
+                    NavigationLink(destination: AddRoutineView()) {
+                        ZStack {
+                            Image("\(routine.image)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(8)
+                            
+                            VStack(alignment: .leading) {
+                                Toggle(isOn: $routine.isEnable) {
+                                    Text("\(routine.title)")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                }
+                                
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        Text("Notification:")
+                                            .fontWeight(.semibold)
+                                            .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                        Text("08.30 AM Daily")
+                                            .fontWeight(.semibold)
+                                            .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                    }
+                                    
+                                    Spacer()
+                                }
+                                
+                                Spacer()
+                                
+                                Text("Cleanser - Moisturizer - Sunscreen - Masker - Toner - Cukuran")
+                                    .font(.subheadline)                                    .foregroundColor(.black)
+                                    .multilineTextAlignment(.leading)
+                            }
+                            .padding(.horizontal)
+                            .padding(.top)
+                            
+                        }
+                        .frame(width: 350, height: 180, alignment: .topLeading)
                     }
-                } .frame(width: 350)
-               
+                }
+                
+                Spacer()
+                
+                PrimaryButton(title: "Add New Routine") {
+                    print("\(routineVM.routineList[0].isEnable)")
+                }
+                
             }
-            
-            Spacer()
-            
+            .ignoresSafeArea(edges: .top)
+            .navigationTitle("Routine List")
+            .navigationBarTitleDisplayMode(.large)
+            .frame(alignment: .top)
         }
     }
 }

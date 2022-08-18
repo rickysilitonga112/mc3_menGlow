@@ -59,6 +59,7 @@ struct AddRoutineView: View {
                 Spacer()
             }
             
+            Spacer()
             HStack {
                 Spacer()
                 PrimaryButton(title: "Save") {
@@ -67,7 +68,6 @@ struct AddRoutineView: View {
                 Spacer()
             }
             
-            Spacer()
         }
         .padding(.horizontal)
         .navigationBarTitleDisplayMode(.inline)
