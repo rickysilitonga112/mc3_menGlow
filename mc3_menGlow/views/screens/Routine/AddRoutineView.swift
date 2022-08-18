@@ -11,10 +11,14 @@ struct AddRoutineView: View {
     @State private var routineTime = Date.now
     @State private var routineName: String = ""
     
+    
+    @State var presentSheet: Bool = false
+    @Binding var routine: Routine
+
     var body: some View {
         VStack(spacing: 30) {
             HStack {
-                Text("Morning Routine")
+                Text("\(routine.title)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 Spacer()
@@ -48,12 +52,14 @@ struct AddRoutineView: View {
             }
             
             Button {
-                // add new skincare product
+                presentSheet.toggle()
             } label: {
                 HStack {
                     Image(systemName: "plus.circle.fill")
                         .frame(width: 22, height: 22)
+                        .foregroundColor(kPrimaryColor)
                     Text("Add New Skincare Product")
+                        .foregroundColor(kPrimaryColor)
                 }
                 
                 Spacer()
@@ -71,11 +77,15 @@ struct AddRoutineView: View {
         }
         .padding(.horizontal)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $presentSheet) {
+            ProductListView(routine: $routine, presentSheet: $presentSheet)
+        }
     }
+    
 }
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView()
+        AddRoutineView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [])))
     }
 }

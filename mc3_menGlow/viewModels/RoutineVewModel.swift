@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 
 class RoutineViewModel: ObservableObject {
@@ -19,21 +20,21 @@ class RoutineViewModel: ObservableObject {
             image: "routinelist_morning",
             time: Date.now,
             isEnable: false,
-            products: [
-                Product(title: "Sunscreen", isCheck: true),
-                Product(title: "Moisturizer", isCheck: false)
-            ]
+            products: Product.getProduct()
         ),
         Routine(
             title: "Night Routine",
             image: "routinelist_evening",
             time: Date.now,
             isEnable: false,
-            products: [
-                Product(title: "Sunscreen", isCheck: true),
-                Product(title: "Moisturizer", isCheck: false)
-            ]
+            products: Product.getProduct()
         )
     ]
     
+    
+    func getIndex(id: UUID) -> Int {
+        var index = 0
+         
+        return index
+    }
 }

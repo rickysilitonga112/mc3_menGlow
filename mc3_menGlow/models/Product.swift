@@ -8,19 +8,21 @@
 import Foundation
 
 
-struct Product {
-    let title: String
-    let isCheck: Bool
+struct Product: Identifiable {
+    var id = UUID()
+    var title: String
+    var isCheck: Bool
+    var productName: String
 
-    func getProduct() -> [Product] {
+    static func getProduct() -> [Product] {
         let products = [
-            Product(title: "Cleanser", isCheck: false),
-            Product(title: "Moisturizer", isCheck: false),
-            Product(title: "Sunscreen", isCheck: false),
-            Product(title: "Toner", isCheck: false),
-            Product(title: "Serum", isCheck: false),
-            Product(title: "Night Cream", isCheck: false),
-            Product(title: "Mask", isCheck: false)
+            Product(title: "Cleanser", isCheck: false, productName: ""),
+            Product(title: "Moisturizer", isCheck: false, productName: ""),
+            Product(title: "Sunscreen", isCheck: false, productName: ""),
+            Product(title: "Toner", isCheck: false, productName: ""),
+            Product(title: "Serum", isCheck: false, productName: ""),
+            Product(title: "Night Cream", isCheck: false, productName: ""),
+            Product(title: "Mask", isCheck: false, productName: "")
         ]
         
         return products

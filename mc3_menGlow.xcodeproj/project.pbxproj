@@ -23,6 +23,7 @@
 		5688538B28ADEA8D008080B5 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688538A28ADEA8D008080B5 /* Routine.swift */; };
 		5688538D28ADEB3B008080B5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688538C28ADEB3B008080B5 /* Product.swift */; };
 		5688539428AE3385008080B5 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688539328AE3385008080B5 /* ProductListView.swift */; };
+		56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		5688538A28ADEA8D008080B5 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		5688538C28ADEB3B008080B5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5688539328AE3385008080B5 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				566235F328AB57A300EB6B3A /* AddRoutineView.swift */,
 				566235F128AB576A00EB6B3A /* RoutineListView.swift */,
 				5688539328AE3385008080B5 /* ProductListView.swift */,
+				56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				5688539428AE3385008080B5 /* ProductListView.swift in Sources */,
 				566235F428AB57A300EB6B3A /* AddRoutineView.swift in Sources */,
 				566235F928AB717000EB6B3A /* PrimaryButton.swift in Sources */,
+				56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */,
 				566235FC28AB755C00EB6B3A /* UIScreen+Extension.swift in Sources */,
 				5684C7C728AA5C2A00A39497 /* ContentView.swift in Sources */,
 				5688538928ADE3A5008080B5 /* RoutineVewModel.swift in Sources */,

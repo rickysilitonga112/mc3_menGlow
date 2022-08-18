@@ -21,7 +21,7 @@ struct RoutineListView: View {
                     .padding(.bottom)
                 
                 ForEach($routineVM.routineList) { $routine in
-                    NavigationLink(destination: AddRoutineView()) {
+                    NavigationLink(destination: AddRoutineView(routine: $routine)) {
                         ZStack {
                             Image("\(routine.image)")
                                 .resizable()
@@ -45,14 +45,11 @@ struct RoutineListView: View {
                                             .fontWeight(.semibold)
                                             .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
                                     }
-                                    
                                     Spacer()
                                 }
-                                
                                 Spacer()
-                                
-                                Text("Cleanser - Moisturizer - Sunscreen - Masker - Toner - Cukuran")
-                                    .font(.subheadline)                                    .foregroundColor(.black)
+                                Text("Cleanser")
+                                    .foregroundColor(.black)
                                     .multilineTextAlignment(.leading)
                             }
                             .padding(.horizontal)

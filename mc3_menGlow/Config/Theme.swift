@@ -8,4 +8,4 @@
 import Foundation
 import SwiftUI
 
-let kPrimaryColor = Color.red
+let kPrimaryColor = Color(red: 70/255, green: 73/255, blue: 48/255)
