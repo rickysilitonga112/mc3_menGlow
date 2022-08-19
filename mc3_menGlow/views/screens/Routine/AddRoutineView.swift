@@ -71,7 +71,6 @@ struct AddRoutineView: View {
                 Spacer()
                 PrimaryButton(title: "Save") {
                 // Save new routine
-                    NavigationLink(<#LocalizedStringKey#>, destination: Dashboard())
                 }
                 Spacer()
             }

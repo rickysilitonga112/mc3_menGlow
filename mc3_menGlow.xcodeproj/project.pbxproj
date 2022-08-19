@@ -11,6 +11,7 @@
 		431502F328AF565800FE1931 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F228AF565800FE1931 /* Dashboard.swift */; };
 		431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F428AF5AF400FE1931 /* ProductCard.swift */; };
 		431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F628AF7D2400FE1931 /* ProgressView.swift */; };
+		431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502FA28AFD08300FE1931 /* Dashboard2.swift */; };
 		566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235ED28AA9B7900EB6B3A /* Constant.swift */; };
 		566235F028AA9BD900EB6B3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235EF28AA9BD900EB6B3A /* Theme.swift */; };
 		566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235F128AB576A00EB6B3A /* RoutineListView.swift */; };
@@ -35,6 +36,7 @@
 		431502F228AF565800FE1931 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		431502F428AF5AF400FE1931 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		431502F628AF7D2400FE1931 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		431502FA28AFD08300FE1931 /* Dashboard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard2.swift; sourceTree = "<group>"; };
 		566235ED28AA9B7900EB6B3A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		566235EF28AA9BD900EB6B3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		566235F128AB576A00EB6B3A /* RoutineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListView.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				431502F228AF565800FE1931 /* Dashboard.swift */,
+				431502FA28AFD08300FE1931 /* Dashboard2.swift */,
 				431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */,
 				431502F628AF7D2400FE1931 /* ProgressView.swift */,
 				566235F528AB57AF00EB6B3A /* Routine */,
@@ -281,6 +284,7 @@
 				5684C7C528AA5C2A00A39497 /* mc3_menGlowApp.swift in Sources */,
 				431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */,
 				566235F028AA9BD900EB6B3A /* Theme.swift in Sources */,
+				431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */,
 				5684C7D128AA5C2B00A39497 /* mc3_menGlow.xcdatamodeld in Sources */,
 				566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */,
 				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,

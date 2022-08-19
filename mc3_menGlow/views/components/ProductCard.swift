@@ -14,7 +14,7 @@ struct ProductCard: View {
     var body: some View {
         
         ForEach($routine.products) { $product in
-            if product.isCheck == true {
+//            if product.isCheck == true {
             VStack(alignment: .leading) {
                 HStack{
                     Image("\(product.icon)")
@@ -24,10 +24,13 @@ struct ProductCard: View {
                         Text("\(product.productName)")
                             .font(.body)
                             .fontWeight(.semibold)
-                        
+                            .frame(maxWidth:. infinity, alignment: .leading)
                         Text("\(product.title)")
                             .font(.caption)
-                    }.frame(width: 230)
+                            .frame(maxWidth:. infinity, alignment: .leading)
+                    }
+                    .frame(width: 240)
+                    
                     Button{
                         
                     } label: {
@@ -37,7 +40,6 @@ struct ProductCard: View {
                             .foregroundColor(Color("OldGreen"))
                     }
                 }
-                //            .disabled(true)
                 .padding(12)
                 .background(.white)
                 .cornerRadius(10)
@@ -45,7 +47,7 @@ struct ProductCard: View {
                 
             }
                 
-            }
+            
             
         }
     }

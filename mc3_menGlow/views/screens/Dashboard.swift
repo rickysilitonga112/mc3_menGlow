@@ -18,7 +18,7 @@ struct Dashboard: View {
                         Image("\(routine.image2)")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            
+                            .ignoresSafeArea()
                         VStack{
                             VStack(alignment: .trailing){
                                 Text("Progress Summary")
@@ -91,7 +91,7 @@ struct Dashboard: View {
                                 
                                 
                             }
-                            .offset(y: 150)
+//                            .offset(y: 150)
                             
                         }
                     }
@@ -99,12 +99,11 @@ struct Dashboard: View {
                         ProductCard(routine: $routine)
                     }.offset(y: 80)
                 }
-                .ignoresSafeArea()
             }
         }
         .tabViewStyle(.page)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BackgroundColor"))
+        .background(Color("BackgroundCol"))
         
     }
 }
