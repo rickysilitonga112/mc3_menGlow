@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */; };
-		431502F328AF565800FE1931 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F228AF565800FE1931 /* Dashboard.swift */; };
 		431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F428AF5AF400FE1931 /* ProductCard.swift */; };
 		431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F628AF7D2400FE1931 /* ProgressView.swift */; };
 		431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502FA28AFD08300FE1931 /* Dashboard2.swift */; };
@@ -33,7 +32,6 @@
 
 /* Begin PBXFileReference section */
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
-		431502F228AF565800FE1931 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		431502F428AF5AF400FE1931 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		431502F628AF7D2400FE1931 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		431502FA28AFD08300FE1931 /* Dashboard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard2.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 		5684C7DE28AA5D0400A39497 /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				431502F228AF565800FE1931 /* Dashboard.swift */,
 				431502FA28AFD08300FE1931 /* Dashboard2.swift */,
 				431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */,
 				431502F628AF7D2400FE1931 /* ProgressView.swift */,
@@ -290,7 +287,6 @@
 				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,
 				431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */,
 				5688538D28ADEB3B008080B5 /* Product.swift in Sources */,
-				431502F328AF565800FE1931 /* Dashboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
