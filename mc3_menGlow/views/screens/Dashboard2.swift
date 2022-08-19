@@ -93,6 +93,11 @@ struct Dashboard2: View {
                     ScrollView{
                         ProductCard(routine: $routine)
                     }
+                    Button{
+                        
+                    } label: {
+                        PrimaryButton(title: "Complete Task")
+                    }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BackgroundColor"))
