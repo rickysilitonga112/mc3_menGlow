@@ -10,7 +10,7 @@ import SwiftUI
 struct RoutineListView: View {
     private let screenWidth = UIScreen.screenWidth
     
-    @StateObject var routineVM = RoutineViewModel()
+    @StateObject var routineVM = RoutineViewModel.shared
     
     var body: some View {
         NavigationView {

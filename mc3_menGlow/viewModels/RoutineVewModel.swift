@@ -20,20 +20,22 @@ class RoutineViewModel: ObservableObject {
             image: "routinelist_morning",
             time: Date.now,
             isEnable: false,
-            products: Product.getProduct()
+            products: Product.getProduct(),
+            image2: "header_morning"
         ),
         Routine(
             title: "Night Routine",
             image: "routinelist_evening",
             time: Date.now,
             isEnable: false,
-            products: Product.getProduct()
+            products: Product.getProduct(),
+            image2: "header_night"
         )
     ]
     
     
     func getIndex(id: UUID) -> Int {
-        var index = 0
+        let index = 0
          
         return index
     }

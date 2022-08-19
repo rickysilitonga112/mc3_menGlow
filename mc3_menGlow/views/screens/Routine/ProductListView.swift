@@ -37,8 +37,8 @@ struct ProductListView: View {
     }
 }
 
-struct ProductListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductListView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [Product(title: "Cleanser", isCheck: false, productName: ""), Product(title: "Moisturizer", isCheck: false, productName: ""), Product(title: "Masker", isCheck: false, productName: "")])), presentSheet: .constant(false))
-    }
-}
+//struct ProductListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProductListView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [Product(title: "Cleanser", isCheck: false, productName: "", icon: <#String#>), Product(title: "Moisturizer", isCheck: false, productName: ""), Product(title: "Masker", isCheck: false, productName: "")])), presentSheet: .constant(false))
+//    }
+//}

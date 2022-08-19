@@ -14,6 +14,7 @@ struct AddRoutineView: View {
     
     @State var presentSheet: Bool = false
     @Binding var routine: Routine
+//    @Binding var showAddRoutineView: Bool
 
     var body: some View {
         VStack(spacing: 30) {
@@ -69,7 +70,8 @@ struct AddRoutineView: View {
             HStack {
                 Spacer()
                 PrimaryButton(title: "Save") {
-                    // Save new routine
+                // Save new routine
+                    NavigationLink(<#LocalizedStringKey#>, destination: Dashboard())
                 }
                 Spacer()
             }
@@ -86,6 +88,6 @@ struct AddRoutineView: View {
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [])))
+        AddRoutineView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [], image2: "")))
     }
 }
