@@ -19,7 +19,6 @@ struct Dashboard2: View {
                         Image("\(routine.image2)")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                        //                            .ignoresSafeArea()
                         VStack(alignment: .trailing){
                             Text("Progress Summary")
                                 .fontWeight(.semibold)
@@ -37,20 +36,20 @@ struct Dashboard2: View {
                             .font(Font.system(size: 12))
                             .foregroundColor((routine.title == "Morning Routine") ? .black : .white )
                         }
-                        .offset(x: 80, y: -40)
+                        .offset(x: 80, y: -10)
                         
                     }
                     HStack{
                         Button{
-//                            routineVM.getIndex(id: 0)
+                            //                            routineVM.getIndex(id: 0)
                         } label: {
                             Image(systemName: "sun.max.circle.fill")
                                 .resizable()
                                 .frame(width: 40, height: 40)
-                                .foregroundColor((routine.title == "Night Routine") ? .gray : Color("Brown"))
+                                .foregroundColor((routine.title == "Night Routine") ? Color("DisableColor") : Color("Brown"))
                         }
                         
-                        Text("- - - - -")
+                        Text("- - - -")
                             .foregroundColor(Color("Strip"))
                         Button{
                             
@@ -58,7 +57,7 @@ struct Dashboard2: View {
                             Image(systemName: "moon.circle.fill")
                                 .resizable()
                                 .frame(width: 40, height: 40)
-                                .foregroundColor((routine.title == "Morning Routine") ? .gray : Color("Brown"))
+                                .foregroundColor((routine.title == "Morning Routine") ? Color("DisableColor") : Color("Brown"))
                         }
                     }
                     
@@ -99,10 +98,15 @@ struct Dashboard2: View {
                     
                     
                 }
+                .ignoresSafeArea()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BackgroundColor"))
             }
         }
+        .frame(
+            width: UIScreen.main.bounds.width ,
+            height: UIScreen.main.bounds.height
+        )
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
