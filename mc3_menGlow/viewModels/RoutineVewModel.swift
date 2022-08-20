@@ -32,9 +32,14 @@ class RoutineViewModel: ObservableObject {
     ]
     
     
-    func getIndex(id: UUID) -> Int {
-        var index = 0
-         
-        return index
+    func addNewRoutine(_ newRoutine: Routine) {
+        routineList.append(newRoutine)
     }
+    
+    
+//    func getIndex(id: UUID) -> Int {
+//        var index = 0
+//         
+//        return index
+//    }
 }

@@ -13,7 +13,7 @@ struct Routine: Identifiable {
     var id = UUID()
     var title: String
     var image: String
-    var time: Date?
+    var time: Date
     var isEnable: Bool
     var products: [Product]
 }

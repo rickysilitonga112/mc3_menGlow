@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+enum Day {
+    case sun
+    case mon
+    case tues
+    case wed
+    case thurs
+    case fri
+    case sat
+}
