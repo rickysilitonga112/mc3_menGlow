@@ -12,7 +12,6 @@ struct AddRoutineView: View {
     
     @State var presentSheet: Bool = false
     @Binding var routine: Routine
-//    @Binding var showAddRoutineView: Bool
 
     var body: some View {
         NavigationView {
@@ -93,6 +92,6 @@ struct AddRoutineView: View {
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [], image2: "")))
+        AddRoutineView(routine: .constant(Routine(title: "Morning Routine", image: "", time: Date.now, isEnable: false, products: [Product(title: "Moisturizer", isCheck: true, productName: "")])))
     }
 }
