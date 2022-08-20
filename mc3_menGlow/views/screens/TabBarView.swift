@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct TabBarView: View {
-//    init() {
-//        UITabBar.appearance().backgroundColor = UIColor.tintColor
-//      }
+    init() {
+//        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = UIColor(named: "TabBarColor")
+      }
     var body: some View {
         TabView{
             Dashboard2()
@@ -37,7 +38,7 @@ struct TabBarView: View {
                     Text("My Skin")
                 }
         }
-//        .accentColor(.white)
+        .accentColor(.white)
     }
 }
 

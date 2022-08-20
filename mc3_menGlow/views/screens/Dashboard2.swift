@@ -94,7 +94,7 @@ struct Dashboard2: View {
                         PrimaryButton(title: "Complete Task") {
                             
                         }
-                    }
+                    }.frame(maxHeight: 380)
                     
                     
                 }
