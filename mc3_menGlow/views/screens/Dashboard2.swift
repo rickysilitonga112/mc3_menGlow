@@ -19,7 +19,7 @@ struct Dashboard2: View {
                         Image("\(routine.image2)")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-//                            .ignoresSafeArea()
+                        //                            .ignoresSafeArea()
                         VStack(alignment: .trailing){
                             Text("Progress Summary")
                                 .fontWeight(.semibold)
@@ -42,7 +42,7 @@ struct Dashboard2: View {
                     }
                     HStack{
                         Button{
-                            
+//                            routineVM.getIndex(id: 0)
                         } label: {
                             Image(systemName: "sun.max.circle.fill")
                                 .resizable()
@@ -68,10 +68,10 @@ struct Dashboard2: View {
                                 .bold()
                                 .font(.largeTitle)
                                 .padding(.horizontal)
-                            //                            Date(routine.time)
-                            //                                .fontWeight(.semibold)
-                            //                                .font(.headline)
-                            //                                .padding(.horizontal)
+                            Text("08.30 AM")
+                                .fontWeight(.semibold)
+                                .font(.headline)
+                                .padding(.horizontal)
                         }.frame(maxWidth: .infinity, alignment: .leading)
                         //                Spacer()
                         Circle()
@@ -90,21 +90,20 @@ struct Dashboard2: View {
                             }
                             .offset(x: -20)
                     }
-                    ScrollView{
+                    ScrollView(showsIndicators: false){
                         ProductCard(routine: $routine)
+                        PrimaryButton(title: "Complete Task") {
+                            
+                        }
                     }
                     
-                    PrimaryButton(title: "Complete Task") {
-                        
-                    }
                     
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(Color("BackgroundColor"))
             }
         }
-        .tabViewStyle(.page)
-        .ignoresSafeArea()
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 
