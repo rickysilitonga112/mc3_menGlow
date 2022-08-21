@@ -11,6 +11,10 @@ struct Dashboard2: View {
     
     @StateObject var routineVM = RoutineViewModel.shared
     
+//    let identifier: Routine
+    
+//    @Binding var routine: Routine
+    
     var body: some View {
         TabView {
             ForEach($routineVM.routineList) { $routine in
@@ -85,7 +89,7 @@ struct Dashboard2: View {
                                         Image(systemName: "checkmark.circle.fill")
                                             .resizable()
                                             .frame(width: 38, height: 38)
-                                            .opacity(0)
+//                                            .opacity(routine == identifier ? 1 : 0))
                                     }
                             }
                             .offset(x: -20)
@@ -112,8 +116,8 @@ struct Dashboard2: View {
     }
 }
 
-struct Dashboard2_Previews: PreviewProvider {
-    static var previews: some View {
-        Dashboard2()
-    }
-}
+//struct Dashboard2_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Dashboard2()
+//    }
+//}
