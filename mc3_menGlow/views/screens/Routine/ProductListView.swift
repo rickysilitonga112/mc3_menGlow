@@ -39,6 +39,11 @@ struct ProductListView: View {
 
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [Product(title: "Cleanser", isCheck: false, productName: ""), Product(title: "Moisturizer", isCheck: false, productName: ""), Product(title: "Masker", isCheck: false, productName: "")])), presentSheet: .constant(false))
+        ProductListView(routine: .constant(
+            Routine(title: "", image: "", time: Date.now, isEnable: false, products: [
+                Product(title: "Cleanser", isCheck: false, productName: "", icon: ""),
+                Product(title: "Moisturizer", isCheck: false, productName: "", icon: ""),
+                Product(title: "Masker", isCheck: false, productName: "", icon: "")], image2: "")
+        ), presentSheet: .constant(false))
     }
 }

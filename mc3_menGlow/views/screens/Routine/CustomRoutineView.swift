@@ -16,14 +16,14 @@ struct DailyRepeat: Identifiable {
 struct CustomRoutine: View {
     @StateObject var routineVM: RoutineViewModel
     
-    @State private var title: String = ""
-    @State private var time: Date = Date.now
-    @State private var products: [Product] = Product.getProduct()
+    @State var newRoutine = Routine(title: "", image: "", time: Date.now, isEnable: true, products: [], image2: "")
+    
+    @State var presentSheet: Bool = false
     
     var body: some View {
         VStack(spacing: 30) {
             // textfield
-            TextField("Routine Name", text: $title)
+            TextField("Routine Name", text: $newRoutine.title)
                 .padding(.horizontal)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
@@ -38,7 +38,7 @@ struct CustomRoutine: View {
                 Text("Time for routine")
                     .fontWeight(.semibold)
                 Spacer()
-                DatePicker("", selection: $time, displayedComponents: .hourAndMinute)
+                DatePicker("", selection: $newRoutine.time, displayedComponents: .hourAndMinute)
                     .labelsHidden()
             } .padding(.horizontal)
             
@@ -68,7 +68,7 @@ struct CustomRoutine: View {
             } .padding(.horizontal)
             
             LazyVStack {
-                ForEach($products) { $product in
+                ForEach($newRoutine.products) { $product in
                     if product.isCheck {
                         VStack {
                             HStack {
@@ -87,10 +87,21 @@ struct CustomRoutine: View {
                         }
                     }
                 }
+            }
+            .padding(.horizontal)
+            
+            AddProductButton(title: "Add New Product") {
+                presentSheet.toggle()
             } .padding(.horizontal)
             
             Spacer()
             
+        }
+        .sheet(isPresented: $presentSheet) {
+            ProductListView(routine: $newRoutine, presentSheet: $presentSheet)
+        }
+        .onAppear {
+            newRoutine.products = Product.getProduct()
         }
         .navigationTitle("Custom Routine")
         .navigationBarTitleDisplayMode(.large)

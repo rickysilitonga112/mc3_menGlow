@@ -47,7 +47,7 @@ struct RoutineListView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach($routineVM.routineList) { $routine in
-                            NavigationLink(destination: AddRoutineView(routine: $routine)) {
+
                                 ZStack {
                                     Image("\(routine.image)")
                                         .resizable()
@@ -62,21 +62,31 @@ struct RoutineListView: View {
                                                 .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
                                         }
                                         
-                                        HStack {
-                                            VStack(alignment: .leading) {
-                                                Text("Notification:")
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
-                                                Text("08.30 AM Daily")
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                        NavigationLink(destination: AddRoutineView(routine: $routine)) {
+                                            VStack {
+                                                HStack {
+                                                    VStack(alignment: .leading) {
+                                                        Text("Notification:")
+                                                            .fontWeight(.semibold)
+                                                            .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                                        Text("08.30 AM Daily")
+                                                            .fontWeight(.semibold)
+                                                            .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                                    }
+                                                    Spacer()
+                                                }
+                                                Spacer()
+                                                HStack {
+//                                                    ForEach(0 ..< 5) { item in
+//                                                        TagView(title: "Cleanser")
+//                                                    }
+                                                    TagViewPlacement(items: ["Cleanser", "Moisturizer", "Toner", "Sabu", "Makser"])
+                                                    
+                                                    Spacer()
+                                                }
                                             }
-                                            Spacer()
                                         }
-                                        Spacer()
-                                        Text("Cleanser")
-                                            .foregroundColor(.black)
-                                            .multilineTextAlignment(.leading)
+                                       
                                     }
                                     .padding(.horizontal)
                                     .padding(.top)
@@ -85,7 +95,6 @@ struct RoutineListView: View {
                                 .frame(width: 350, height: 180, alignment: .topLeading)
                                 .padding(.bottom)
                                 .opacity(routine.isEnable ? 1 : 0.6)
-                            }
                         }
                     }
                 }

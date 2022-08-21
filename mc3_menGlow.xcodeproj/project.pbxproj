@@ -13,6 +13,7 @@
 		431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502FA28AFD08300FE1931 /* Dashboard2.swift */; };
 		43764F6228B07AC700517399 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6128B07AC700517399 /* TabBarView.swift */; };
 		43764F6428B07B4D00517399 /* MySkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6328B07B4D00517399 /* MySkinView.swift */; };
+		563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DFCC028B20E9D00AD3175 /* TagView.swift */; };
 		566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235ED28AA9B7900EB6B3A /* Constant.swift */; };
 		566235F028AA9BD900EB6B3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235EF28AA9BD900EB6B3A /* Theme.swift */; };
 		566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235F128AB576A00EB6B3A /* RoutineListView.swift */; };
@@ -30,6 +31,7 @@
 		5688538D28ADEB3B008080B5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688538C28ADEB3B008080B5 /* Product.swift */; };
 		5688539428AE3385008080B5 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688539328AE3385008080B5 /* ProductListView.swift */; };
 		56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */; };
+		56FE6AF328B117E500CCFDB7 /* AddProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,7 @@
 		431502FA28AFD08300FE1931 /* Dashboard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard2.swift; sourceTree = "<group>"; };
 		43764F6128B07AC700517399 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		43764F6328B07B4D00517399 /* MySkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinView.swift; sourceTree = "<group>"; };
+		563DFCC028B20E9D00AD3175 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		566235ED28AA9B7900EB6B3A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		566235EF28AA9BD900EB6B3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		566235F128AB576A00EB6B3A /* RoutineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListView.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		5688538C28ADEB3B008080B5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5688539328AE3385008080B5 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutineView.swift; sourceTree = "<group>"; };
+		56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 			children = (
 				566235F828AB717000EB6B3A /* PrimaryButton.swift */,
 				431502F428AF5AF400FE1931 /* ProductCard.swift */,
+				56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */,
+				563DFCC028B20E9D00AD3175 /* TagView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -282,11 +288,13 @@
 				566235F928AB717000EB6B3A /* PrimaryButton.swift in Sources */,
 				431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */,
 				56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */,
+				563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */,
 				566235FC28AB755C00EB6B3A /* UIScreen+Extension.swift in Sources */,
 				5684C7C728AA5C2A00A39497 /* ContentView.swift in Sources */,
 				5688538928ADE3A5008080B5 /* RoutineVewModel.swift in Sources */,
 				5684C7C528AA5C2A00A39497 /* mc3_menGlowApp.swift in Sources */,
 				431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */,
+				56FE6AF328B117E500CCFDB7 /* AddProductButton.swift in Sources */,
 				566235F028AA9BD900EB6B3A /* Theme.swift in Sources */,
 				431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */,
 				5684C7D128AA5C2B00A39497 /* mc3_menGlow.xcdatamodeld in Sources */,

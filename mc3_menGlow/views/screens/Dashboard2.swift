@@ -51,6 +51,7 @@ struct Dashboard2: View {
                         
                         Text("- - - -")
                             .foregroundColor(Color("Strip"))
+                        
                         Button{
                             
                         } label: {

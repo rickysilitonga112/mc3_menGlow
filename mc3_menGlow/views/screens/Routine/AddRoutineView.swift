@@ -12,87 +12,71 @@ struct AddRoutineView: View {
     
     @State var presentSheet: Bool = false
     @Binding var routine: Routine
-//    @Binding var showAddRoutineView: Bool
-
+    //    @Binding var showAddRoutineView: Bool
+    
     var body: some View {
-        NavigationView {
-            VStack(spacing: 30) {
-                HStack {
-                    Text("\(routine.title)")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    Spacer()
-                }
-                
-                HStack {
-                    Text("Time for routine")
-                        .fontWeight(.semibold)
-                    Spacer()
-                    DatePicker("", selection: $routine.time, displayedComponents: .hourAndMinute)
-                        .labelsHidden()
-                }
-                
-                HStack {
-                    Text("What skincare product that you use?")
-                        .fontWeight(.semibold)
-                    Spacer()
-                }
-                
-                ForEach($routine.products) { $product in
-                    if product.isCheck {
-                        VStack {
-                            HStack {
-                                Text(product.title)
-                                Spacer()
-                                Button {
-                                    product.isCheck.toggle()
-                                } label: {
-                                    Image(systemName: "trash.fill")
-                                        .frame(width: 20, height: 22)
-                                        .foregroundColor(kSecondaryColor)
-                                }
-                            }
-                            
-                            TextField("Product Name", text: $product.productName)
-                        }
-                    }
-                }
-                
-                Button {
-                    presentSheet.toggle()
-                } label: {
-                    HStack {
-                        Image(systemName: "plus.circle.fill")
-                            .frame(width: 22, height: 22)
-                            .foregroundColor(kSecondaryColor)
-                        Text("Add New Skincare Product")
-                            .foregroundColor(kSecondaryColor)
-                    }
-                    
-                    Spacer()
-                }
-                
+        VStack(spacing: 30) {
+            HStack {
+                Text("Time for routine")
+                    .fontWeight(.semibold)
                 Spacer()
-                HStack {
-                    Spacer()
-                    PrimaryButton(title: "Save") {
-                        // Save new routine
-                    }
-                    Spacer()
-                }
-                
+                DatePicker("", selection: $routine.time, displayedComponents: .hourAndMinute)
+                    .labelsHidden()
             }
+            
+            HStack {
+                Text("What skincare product that you use?")
+                    .fontWeight(.semibold)
+                Spacer()
+            }
+            
+            ForEach($routine.products) { $product in
+                if product.isCheck {
+                    VStack {
+                        HStack {
+                            Text(product.title)
+                            Spacer()
+                            Button {
+                                product.isCheck.toggle()
+                            } label: {
+                                Image(systemName: "trash.fill")
+                                    .frame(width: 20, height: 22)
+                                    .foregroundColor(kSecondaryColor)
+                            }
+                        }
+                        
+                        TextField("Product Name", text: $product.productName)
+                    }
+                }
+            }
+            
+            AddProductButton(title: "Add New Product") {
+                presentSheet.toggle()
+            }
+            
+            Spacer()
+            HStack {
+                Spacer()
+                PrimaryButton(title: "Save") {
+                    // Save new routine
+                }
+                Spacer()
+            }
+            Spacer()
+            
         }
         .padding(.horizontal)
         .sheet(isPresented: $presentSheet) {
             ProductListView(routine: $routine, presentSheet: $presentSheet)
         }
+        .navigationTitle(routine.title)
+        .navigationBarTitleDisplayMode(.large)
     }
     
 }
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView(routine: .constant(Routine(title: "", image: "", isEnable: false, products: [], image2: "")))
+        AddRoutineView(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [], image2: "")))
     }
 }
