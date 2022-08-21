@@ -57,7 +57,7 @@ struct CustomRoutine: View {
                             .fill(Color.green)
                             .frame(width: 40, height: 40, alignment: .center)
                             .overlay(
-                                Text("S")
+                                Text("Sun")
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
                         )
@@ -92,7 +92,8 @@ struct CustomRoutine: View {
             
             AddProductButton(title: "Add New Product") {
                 presentSheet.toggle()
-            } .padding(.horizontal)
+            }
+            .padding(.horizontal)
             
             Spacer()
             
@@ -104,7 +105,8 @@ struct CustomRoutine: View {
             newRoutine.products = Product.getProduct()
         }
         .navigationTitle("Custom Routine")
-        .navigationBarTitleDisplayMode(.large)
+        .navigationBarTitleDisplayMode(.inline)
+        .tabViewStyle(.automatic)
     }
     
 }

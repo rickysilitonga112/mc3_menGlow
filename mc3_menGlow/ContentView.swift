@@ -17,8 +17,8 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-//        TabBarView()
-        RoutineListView()
+        TabBarView()
+//        RoutineListView()
     }
 
     private func addItem() {

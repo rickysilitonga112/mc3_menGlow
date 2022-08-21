@@ -33,11 +33,23 @@ class RoutineViewModel: ObservableObject {
         )
     ]
     
+    // nyimpan history
+    
+    
     
     func addNewRoutine(_ newRoutine: Routine) {
         routineList.append(newRoutine)
     }
-    
+
+    func getDashboardRoutineImage(title: String) -> String {
+        if title == "Morning Routine" {
+            return "header_morningsungreen"
+        } else if title == "Night Routine" {
+            return "header_nightmoonwhite"
+        } else {
+            return ""
+        }
+    }
     
 //    func getIndex(id: UUID) -> Int {
 //        var index = 0

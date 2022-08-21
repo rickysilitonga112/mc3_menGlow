@@ -12,7 +12,6 @@ struct Dashboard2: View {
     @StateObject var routineVM = RoutineViewModel.shared
     
 //    let identifier: Routine
-    
 //    @Binding var routine: Routine
     
     var body: some View {
@@ -66,18 +65,18 @@ struct Dashboard2: View {
                         }
                     }
                     
-                    HStack{
+                    HStack {
                         VStack(alignment: .leading){
                             Text(routine.title)
                                 .bold()
                                 .font(.largeTitle)
-                                .padding(.horizontal)
                             Text("08.30 AM")
                                 .fontWeight(.semibold)
                                 .font(.headline)
-                                .padding(.horizontal)
-                        }.frame(maxWidth: .infinity, alignment: .leading)
-                        //                Spacer()
+                        }
+                        
+                        Spacer()
+                        
                         Circle()
                             .fill(Color("Brown"))
                             .frame(width: 40, height: 40)
@@ -92,8 +91,9 @@ struct Dashboard2: View {
 //                                            .opacity(routine == identifier ? 1 : 0))
                                     }
                             }
-                            .offset(x: -20)
                     }
+                    .padding(.horizontal)
+                    
                     ScrollView(showsIndicators: false){
                         ProductCard(routine: $routine)
                         PrimaryButton(title: "Complete Task") {
@@ -116,8 +116,8 @@ struct Dashboard2: View {
     }
 }
 
-//struct Dashboard2_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Dashboard2()
-//    }
-//}
+struct Dashboard2_Previews: PreviewProvider {
+    static var previews: some View {
+        Dashboard2()
+    }
+}

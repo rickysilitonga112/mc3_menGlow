@@ -31,6 +31,7 @@
 		5688538D28ADEB3B008080B5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688538C28ADEB3B008080B5 /* Product.swift */; };
 		5688539428AE3385008080B5 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688539328AE3385008080B5 /* ProductListView.swift */; };
 		56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */; };
+		56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4670028B27F3C00691150 /* OnboardingView.swift */; };
 		56FE6AF328B117E500CCFDB7 /* AddProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		5688538C28ADEB3B008080B5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		5688539328AE3385008080B5 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutineView.swift; sourceTree = "<group>"; };
+		56B4670028B27F3C00691150 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 		5684C7DD28AA5CFC00A39497 /* onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				56B4670028B27F3C00691150 /* OnboardingView.swift */,
 			);
 			path = onboarding;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */,
 				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,
 				431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */,
+				56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */,
 				43764F6228B07AC700517399 /* TabBarView.swift in Sources */,
 				5688538D28ADEB3B008080B5 /* Product.swift in Sources */,
 			);
