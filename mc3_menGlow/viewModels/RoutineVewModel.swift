@@ -21,7 +21,7 @@ class RoutineViewModel: ObservableObject {
             time: Date.now,
             isEnable: false,
             products: Product.getProduct(),
-            image2: "header_morning"
+            image2: "header_morningsungreen"
         ),
         Routine(
             title: "Night Routine",
@@ -29,7 +29,7 @@ class RoutineViewModel: ObservableObject {
             time: Date.now,
             isEnable: false,
             products: Product.getProduct(),
-            image2: "header_night"
+            image2: "header_nightmoonwhite"
         )
     ]
     
