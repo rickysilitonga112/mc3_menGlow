@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3280A93B28B28055005D8640 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280A93A28B28055005D8640 /* Intro.swift */; };
 		431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */; };
 		431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F428AF5AF400FE1931 /* ProductCard.swift */; };
 		431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F628AF7D2400FE1931 /* ProgressView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3280A93A28B28055005D8640 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		431502F428AF5AF400FE1931 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		431502F628AF7D2400FE1931 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				5688538A28ADEA8D008080B5 /* Routine.swift */,
 				5688538C28ADEB3B008080B5 /* Product.swift */,
+				3280A93A28B28055005D8640 /* Intro.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3280A93B28B28055005D8640 /* Intro.swift in Sources */,
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
 				5688538B28ADEA8D008080B5 /* Routine.swift in Sources */,
 				43764F6428B07B4D00517399 /* MySkinView.swift in Sources */,
