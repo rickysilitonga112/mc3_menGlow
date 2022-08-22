@@ -18,6 +18,7 @@
 		43764F6228B07AC700517399 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6128B07AC700517399 /* TabBarView.swift */; };
 		43764F6428B07B4D00517399 /* MySkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6328B07B4D00517399 /* MySkinView.swift */; };
 		563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DFCC028B20E9D00AD3175 /* TagView.swift */; };
+		564CB9CB28B3961D0027C389 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CB9CA28B3961D0027C389 /* DashboardView.swift */; };
 		566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235ED28AA9B7900EB6B3A /* Constant.swift */; };
 		566235F028AA9BD900EB6B3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235EF28AA9BD900EB6B3A /* Theme.swift */; };
 		566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235F128AB576A00EB6B3A /* RoutineListView.swift */; };
@@ -37,6 +38,7 @@
 		56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */; };
 		56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4670028B27F3C00691150 /* OnboardingView.swift */; };
 		56B4670328B341BA00691150 /* RoutineDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4670228B341BA00691150 /* RoutineDay.swift */; };
+		56EDB0C028B391D200E6BBF0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EDB0BF28B391D200E6BBF0 /* MainView.swift */; };
 		56FE6AF328B117E500CCFDB7 /* AddProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,7 @@
 		43764F6128B07AC700517399 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		43764F6328B07B4D00517399 /* MySkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinView.swift; sourceTree = "<group>"; };
 		563DFCC028B20E9D00AD3175 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		564CB9CA28B3961D0027C389 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		566235ED28AA9B7900EB6B3A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		566235EF28AA9BD900EB6B3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		566235F128AB576A00EB6B3A /* RoutineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListView.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutineView.swift; sourceTree = "<group>"; };
 		56B4670028B27F3C00691150 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		56B4670228B341BA00691150 /* RoutineDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDay.swift; sourceTree = "<group>"; };
+		56EDB0BF28B391D200E6BBF0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,9 +155,11 @@
 		5684C7D728AA5C5600A39497 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				56EDB0BF28B391D200E6BBF0 /* MainView.swift */,
 				5684C7DE28AA5D0400A39497 /* screens */,
 				5684C7DD28AA5CFC00A39497 /* onboarding */,
 				5684C7DC28AA5CF300A39497 /* components */,
+				564CB9CA28B3961D0027C389 /* DashboardView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
+				56EDB0C028B391D200E6BBF0 /* MainView.swift in Sources */,
 				5688538B28ADEA8D008080B5 /* Routine.swift in Sources */,
 				43764F6428B07B4D00517399 /* MySkinView.swift in Sources */,
 				56B4670328B341BA00691150 /* RoutineDay.swift in Sources */,
@@ -328,6 +335,7 @@
 				566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */,
 				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,
 				431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */,
+				564CB9CB28B3961D0027C389 /* DashboardView.swift in Sources */,
 				56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */,
 				43764F6228B07AC700517399 /* TabBarView.swift in Sources */,
 				5688538D28ADEB3B008080B5 /* Product.swift in Sources */,
