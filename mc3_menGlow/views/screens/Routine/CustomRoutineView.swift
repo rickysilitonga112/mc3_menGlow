@@ -7,18 +7,12 @@
 
 import SwiftUI
 
-struct DailyRepeat: Identifiable {
-    var id = UUID()
-    let day: Day
-    var isChoose: Bool
-}
-
 struct CustomRoutine: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var routineVM: RoutineViewModel
-    
-    @State var newRoutine = Routine(title: "", image: "", time: Date.now, isEnable: true, products: [])
-    
+    @State var newRoutine = Routine(title: "Custom Routine", image: "", time: Date.now, isEnable: true, products: [], image2: "")
     @State var presentSheet: Bool = false
+    @State var routineDays = [RoutineDay]()
     
     var body: some View {
         VStack(spacing: 30) {
@@ -52,15 +46,26 @@ struct CustomRoutine: View {
                 
                 HStack {
                     
-                    ForEach(0 ..< 7) { item in
+                    ForEach($routineDays) { $routineDay in
                         Circle()
-                            .fill(Color.green)
+                            .stroke(kDayCircleColor, lineWidth: 2)
                             .frame(width: 40, height: 40, alignment: .center)
                             .overlay(
-                                Text("Sun")
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                        )
+                                Circle()
+                                    .fill(routineDay.isChoose ? kDayCircleColor : .white)
+                                    .frame(width: 38, height: 38, alignment: .center)
+                                    .overlay(
+                                        Text(routineDay.day)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(routineDay.isChoose ? .white : .black)
+                                    )
+                            )
+                            .onTapGesture {
+                                print("Day tapped")
+                                print("\(routineDay.id) | \(routineDay.day) | \(routineDay.isChoose)")
+                                routineDay.isChoose.toggle()
+                            }
+                        
                         Spacer()
                     }
                     
@@ -79,7 +84,7 @@ struct CustomRoutine: View {
                                 } label: {
                                     Image(systemName: "xmark.circle.fill")
                                         .frame(width: 20, height: 22)
-                                        .foregroundColor(kSecondaryColor)
+                                        .foregroundColor(.secondary)
                                 }
                             }
                             
@@ -97,12 +102,22 @@ struct CustomRoutine: View {
             
             Spacer()
             
+            
+            PrimaryButton(title: "Save") {
+                newRoutine.dayRepeat = routineDays
+                routineVM.addNewRoutine(newRoutine)
+                self.presentationMode.wrappedValue.dismiss()
+            }
+            
+            
+            
         }
         .sheet(isPresented: $presentSheet) {
-            ProductListView(routine: $newRoutine, presentSheet: $presentSheet)
+            ProductListView(products: $newRoutine.products, presentSheet: $presentSheet)
         }
         .onAppear {
             newRoutine.products = Product.getProduct()
+            routineDays = RoutineDay.getRoutineDays()
         }
         .navigationTitle("Custom Routine")
         .navigationBarTitleDisplayMode(.inline)
