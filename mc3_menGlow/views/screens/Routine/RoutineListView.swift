@@ -12,6 +12,7 @@ struct RoutineListView: View {
     
     @StateObject var routineVM = RoutineViewModel.shared
     @State var session: String? = nil
+    @State var showAddRoutine: Bool = false
     
     
     var body: some View {
@@ -62,7 +63,7 @@ struct RoutineListView: View {
                                                 .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
                                         }
                                         
-                                        NavigationLink(destination: AddRoutineView(routine: $routine)) {
+                                        NavigationLink(destination: AddRoutineView(routineVM: routineVM, routine: $routine)) {
                                             VStack {
                                                 HStack {
                                                     VStack(alignment: .leading) {

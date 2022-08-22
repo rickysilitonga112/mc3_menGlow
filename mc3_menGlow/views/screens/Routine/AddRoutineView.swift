@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct AddRoutineView: View {
-    @State private var routineName: String = ""
     
+    @StateObject var routineVM: RoutineViewModel
     @State var presentSheet: Bool = false
     @Binding var routine: Routine
-    //    @Binding var showAddRoutineView: Bool
+    
+    @State var products = [Product]()
     
     var body: some View {
         VStack(spacing: 30) {
@@ -30,7 +31,7 @@ struct AddRoutineView: View {
                 Spacer()
             }
             
-            ForEach($routine.products) { $product in
+            ForEach($products) { $product in
                 if product.isCheck {
                     VStack {
                         HStack {
@@ -39,9 +40,9 @@ struct AddRoutineView: View {
                             Button {
                                 product.isCheck.toggle()
                             } label: {
-                                Image(systemName: "trash.fill")
+                                Image(systemName: "xmark.circle.fill")
                                     .frame(width: 20, height: 22)
-                                    .foregroundColor(kSecondaryColor)
+                                    .foregroundColor(.secondary)
                             }
                         }
                         
@@ -59,6 +60,7 @@ struct AddRoutineView: View {
                 Spacer()
                 PrimaryButton(title: "Save") {
                     // Save new routine
+                    
                 }
                 Spacer()
             }
@@ -66,8 +68,11 @@ struct AddRoutineView: View {
             
         }
         .padding(.horizontal)
+        .onAppear(perform: {
+            products = routine.products
+        })
         .sheet(isPresented: $presentSheet) {
-            ProductListView(routine: $routine, presentSheet: $presentSheet)
+            ProductListView(products: $products, presentSheet: $presentSheet)
         }
         .navigationTitle(routine.title)
         .navigationBarTitleDisplayMode(.large)
@@ -77,6 +82,6 @@ struct AddRoutineView: View {
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [], image2: "")))
+        AddRoutineView(routineVM: RoutineViewModel(), routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [], image2: "")))
     }
 }

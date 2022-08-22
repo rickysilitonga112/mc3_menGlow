@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductListView: View {
-    @Binding var routine: Routine
+    @Binding var products: [Product]
     @Binding var presentSheet: Bool
     
     var body: some View {
@@ -21,7 +21,7 @@ struct ProductListView: View {
                 Spacer()
             }
             
-            ForEach($routine.products) { $product in
+            ForEach($products) { $product in
                 Toggle(isOn: $product.isCheck) {
                     Text("\(product.title)")
                 }
@@ -39,11 +39,10 @@ struct ProductListView: View {
 
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView(routine: .constant(
-            Routine(title: "", image: "", time: Date.now, isEnable: false, products: [
-                Product(title: "Cleanser", isCheck: false, productName: "", icon: ""),
-                Product(title: "Moisturizer", isCheck: false, productName: "", icon: ""),
-                Product(title: "Masker", isCheck: false, productName: "", icon: "")], image2: "")
-        ), presentSheet: .constant(false))
+        ProductListView(products: .constant([
+            Product(title: "Cleanser", isCheck: true, productName: "", icon: ""),
+            Product(title: "Moisturizer", isCheck: true, productName: "", icon: ""),
+            Product(title: "Toner", isCheck: false, productName: "", icon: "")
+        ]), presentSheet: .constant(true))
     }
 }

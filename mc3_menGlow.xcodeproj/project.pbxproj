@@ -32,6 +32,7 @@
 		5688539428AE3385008080B5 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688539328AE3385008080B5 /* ProductListView.swift */; };
 		56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */; };
 		56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4670028B27F3C00691150 /* OnboardingView.swift */; };
+		56B4670328B341BA00691150 /* RoutineDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B4670228B341BA00691150 /* RoutineDay.swift */; };
 		56FE6AF328B117E500CCFDB7 /* AddProductButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		5688539328AE3385008080B5 /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		56A5EB9C28AE87B500E44759 /* CustomRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRoutineView.swift; sourceTree = "<group>"; };
 		56B4670028B27F3C00691150 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		56B4670228B341BA00691150 /* RoutineDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDay.swift; sourceTree = "<group>"; };
 		56FE6AF228B117E500CCFDB7 /* AddProductButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 			children = (
 				5688538A28ADEA8D008080B5 /* Routine.swift */,
 				5688538C28ADEB3B008080B5 /* Product.swift */,
+				56B4670228B341BA00691150 /* RoutineDay.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
 				5688538B28ADEA8D008080B5 /* Routine.swift in Sources */,
 				43764F6428B07B4D00517399 /* MySkinView.swift in Sources */,
+				56B4670328B341BA00691150 /* RoutineDay.swift in Sources */,
 				5688539428AE3385008080B5 /* ProductListView.swift in Sources */,
 				566235F428AB57A300EB6B3A /* AddRoutineView.swift in Sources */,
 				566235F928AB717000EB6B3A /* PrimaryButton.swift in Sources */,
