@@ -14,59 +14,59 @@ struct ProductCard: View {
     @Binding var routine: Routine
     
     var body: some View {
-        
         ForEach($routine.products) { $product in
-//            if product.isCheck == true {
             ZStack{
                 RoundedRectangle(cornerRadius: 10, style: .circular)
                     .fill(.white)
-                    .frame(width: 350, height: 80)
+                    .frame(height: 80)
                     .shadow(radius: 1)
-            VStack(alignment: .leading) {
-                HStack{
-                    Image("\(product.icon)")
-                        .resizable()
-                        .frame(width: 50, height: 50)
-                    VStack(alignment:. leading){
-                        Text("Garnier Men Acno Fight Anti Acne")
-                            .font(.body)
-                            .fontWeight(.semibold)
-                            .frame(maxWidth:. infinity, alignment: .leading)
-                        Text("\(product.title)")
-                            .font(.caption)
-                            .frame(maxWidth:. infinity, alignment: .leading)
-                    }
-                    .frame(width: 230)
-                    
-                    Circle()
-                        .fill(Color("OldGreen"))
-                        .frame(width: 30, height: 30)
-                        .overlay {
-                            Circle()
-                                .fill(.white)
-                                .frame(width: 28, height: 28)
-                                .overlay {
-                                    Image(systemName: "checkmark.circle.fill")
-                                        .resizable()
-                                        .frame(width: 28, height: 28)
-                                        .foregroundColor(Color("OldGreen"))
-                                        .opacity(product.isCheck ? 1 : 0)
-                                }
+            
+                    HStack {
+                        Image("\(product.icon)")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                        
+                        Spacer()
+                        
+                        VStack(alignment:. leading){
+                            Text("Garnier Men Acno Fight Anti Acne")
+                                .font(.body)
+                                .fontWeight(.semibold)
                             
-                        }.onTapGesture {
-                            product.isCheck.toggle()
+                            Text("\(product.title)")
+                                .font(.caption)
                         }
-                    
-                }
-                .padding(15)
-//                .background(.white)
-//                .cornerRadius(10)
-                
-                
-            }}
-                
-            
-            
+                        .frame(height: 80)
+                        
+                        Spacer()
+                        
+                        Circle()
+                            .fill(Color("OldGreen"))
+                            .frame(width: 30, height: 30)
+                            .overlay {
+                                Circle()
+                                    .fill(.white)
+                                    .frame(width: 28, height: 28)
+                                    .overlay {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .resizable()
+                                            .frame(width: 28, height: 28)
+                                            .opacity(0)
+                                    }
+                            }
+                        
+                    }
+                    .padding(.horizontal)
+            }
+            .padding(.horizontal)
         }
+    }
+}
+
+struct ProductCard_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductCard(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [
+        Product(title: "Cleanser", isCheck: false, productName: "blasalsas", icon: "")
+        ], image2: "")))
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+ 
 struct Dashboard2: View {
     
     @StateObject var routineVM = RoutineViewModel.shared
@@ -45,7 +45,7 @@ struct Dashboard2: View {
                         }
                         
                     }
-                    HStack{
+                    HStack {
                         Button{
                             
                         } label: {
@@ -58,7 +58,7 @@ struct Dashboard2: View {
                         Text("- - - -")
                             .foregroundColor(Color("Strip"))
                         
-                        Button{
+                        Button {
                             
                         } label: {
                             Image(systemName: "moon.circle.fill")
