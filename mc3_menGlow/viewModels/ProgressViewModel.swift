@@ -8,16 +8,19 @@
 import Foundation
 import SwiftUI
 
-class TaskViewModel: ObservableObject {
-    @Published var storedTasks:[ProgressModel] = [
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641645497)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641649097)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641652697)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641656297)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641661897)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641641897)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641677897)),
-        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641681497))
+class ProgressViewModel: ObservableObject {
+    
+    static let shared = ProgressViewModel()
+    
+    @Published var progressRoutine:[ProgressModel] = [
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641645497)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641649097)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641652697)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641656297)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641661897)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641641897)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641677897)),
+//        ProgressModel(taskDate: .init(timeIntervalSince1970: 1641681497))
     ]
     
     //MARK: Current Week Days

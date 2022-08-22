@@ -10,7 +10,7 @@ import UICircularProgressRing
 
 struct ProgressView: View {
     
-    @StateObject var taskModel: TaskViewModel = TaskViewModel()
+    @StateObject var progressVM = ProgressViewModel.shared
     @Namespace var animation
     @State var progress = RingProgress.percent(0.5)
     
@@ -29,24 +29,24 @@ struct ProgressView: View {
                 
                 HStack(spacing: 10) {
                     
-                    ForEach(taskModel.currentWeek, id: \.self){ day in
+                    ForEach(progressVM.currentWeek, id: \.self){ day in
                         VStack{
-                            Text(taskModel.extractDate(date: day, format: "EEE"))
+                            Text(progressVM.extractDate(date: day, format: "EEE"))
                                 .font(.system(size: 17))
                                 .fontWeight(.bold)
                             //EEE will return day as MON, TUE, ...etc
-                            Text(taskModel.extractDate(date: day, format: "dd"))
+                            Text(progressVM.extractDate(date: day, format: "dd"))
                                 .font(.system(size: 17))
                         }
                         //MARK: Foreground Style
 //                        .foregroundStyle(taskModel.isToday(date: day) ? .primary : .primary)
-                        .foregroundColor(taskModel.isToday(date: day) ? .white : .black)
+                        .foregroundColor(progressVM.isToday(date: day) ? .white : .black)
                         //MARK: Capsule Shape
                         .frame(width: 42, height: 70)
                         .background(
                             ZStack {
                                 //MARK: Matched Geometry Effect
-                                if taskModel.isToday(date: day){
+                                if progressVM.isToday(date: day){
                                     Capsule()
                                         .fill(Color("RingColor"))
                                         .matchedGeometryEffect(id: "CURRENTDAY", in: animation)
@@ -57,7 +57,7 @@ struct ProgressView: View {
                         .onTapGesture {
                             //updating current day
                             withAnimation {
-                                taskModel.currentDate = day
+                                progressVM.currentDate = day
                             }
                         }
                     }
@@ -191,12 +191,11 @@ private struct GoalProgressRing: View {
                     padding: 3
                 ),
                 { value in
-                    Label(
-                        String(Int(value * 100)), image:""
-                    )
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
+                    Text(String(Int(value * 100)) + "%")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
                 }
+                
             )
         }
     }
