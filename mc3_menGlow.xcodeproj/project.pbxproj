@@ -159,7 +159,6 @@
 				5684C7DE28AA5D0400A39497 /* screens */,
 				5684C7DD28AA5CFC00A39497 /* onboarding */,
 				5684C7DC28AA5CF300A39497 /* components */,
-				564CB9CA28B3961D0027C389 /* DashboardView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -222,6 +221,7 @@
 		5684C7DE28AA5D0400A39497 /* screens */ = {
 			isa = PBXGroup;
 			children = (
+				564CB9CA28B3961D0027C389 /* DashboardView.swift */,
 				43764F6128B07AC700517399 /* TabBarView.swift */,
 				431502FA28AFD08300FE1931 /* Dashboard2.swift */,
 				431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */,
