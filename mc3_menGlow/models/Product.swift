@@ -17,7 +17,7 @@ struct Product: Identifiable {
 
     static func getProduct() -> [Product] {
         let products = [
-            Product(title: "Cleanser", isCheck: true, productName: "", icon: "cleanser_icon"),
+            Product(title: "Cleanser", isCheck: false, productName: "", icon: "cleanser_icon"),
             Product(title: "Moisturizer", isCheck: false, productName: "", icon: "moisturizer_icon"),
             Product(title: "Sunscreen", isCheck: false, productName: "", icon: "sunscreen_icon"),
             Product(title: "Toner", isCheck: false, productName: "", icon: "toner_icon"),

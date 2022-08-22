@@ -77,6 +77,6 @@ struct AddRoutineView: View {
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [], image2: "")))
+        AddRoutineView(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [])))
     }
 }

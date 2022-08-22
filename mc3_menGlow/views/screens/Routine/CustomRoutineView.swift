@@ -16,7 +16,7 @@ struct DailyRepeat: Identifiable {
 struct CustomRoutine: View {
     @StateObject var routineVM: RoutineViewModel
     
-    @State var newRoutine = Routine(title: "", image: "", time: Date.now, isEnable: true, products: [], image2: "")
+    @State var newRoutine = Routine(title: "", image: "", time: Date.now, isEnable: true, products: [])
     
     @State var presentSheet: Bool = false
     

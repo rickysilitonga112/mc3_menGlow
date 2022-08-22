@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct ProductCard: View {
+    
+    @StateObject var routineVM = RoutineViewModel.shared
     @Binding var routine: Routine
     
     var body: some View {
@@ -17,9 +19,7 @@ struct ProductCard: View {
 //            if product.isCheck == true {
             ZStack{
                 RoundedRectangle(cornerRadius: 10, style: .circular)
-                    
                     .fill(.white)
-                    
                     .frame(width: 350, height: 80)
                     .shadow(radius: 1)
             VStack(alignment: .leading) {
@@ -49,8 +49,12 @@ struct ProductCard: View {
                                     Image(systemName: "checkmark.circle.fill")
                                         .resizable()
                                         .frame(width: 28, height: 28)
-                                        .opacity(0)
+                                        .foregroundColor(Color("OldGreen"))
+                                        .opacity(product.isCheck ? 1 : 0)
                                 }
+                            
+                        }.onTapGesture {
+                            product.isCheck.toggle()
                         }
                     
                 }

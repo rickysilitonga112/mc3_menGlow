@@ -43,7 +43,7 @@ struct ProductListView_Previews: PreviewProvider {
             Routine(title: "", image: "", time: Date.now, isEnable: false, products: [
                 Product(title: "Cleanser", isCheck: false, productName: "", icon: ""),
                 Product(title: "Moisturizer", isCheck: false, productName: "", icon: ""),
-                Product(title: "Masker", isCheck: false, productName: "", icon: "")], image2: "")
+                Product(title: "Masker", isCheck: false, productName: "", icon: "")])
         ), presentSheet: .constant(false))
     }
 }
