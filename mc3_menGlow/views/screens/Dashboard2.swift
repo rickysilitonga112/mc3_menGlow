@@ -96,10 +96,10 @@ struct Dashboard2: View {
                     
                     ScrollView(showsIndicators: false){
                         ProductCard(routine: $routine)
-                        PrimaryButton(title: "Complete Task") {
-                            
-                        }
-                    }.frame(maxHeight: 380)
+                    }.frame(maxHeight: 320)
+                    PrimaryButton(title: "Done") {
+                        
+                    }
                     
                     
                 }

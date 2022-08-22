@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4314533E28B297AB008F5085 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314533D28B297AB008F5085 /* ProgressModel.swift */; };
+		4314534028B297F3008F5085 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314533F28B297F3008F5085 /* ProgressViewModel.swift */; };
+		4314534328B298B5008F5085 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4314534228B298B5008F5085 /* Algorithms */; };
+		4314534628B298CB008F5085 /* UICircularProgressRing in Frameworks */ = {isa = PBXBuildFile; productRef = 4314534528B298CB008F5085 /* UICircularProgressRing */; };
 		431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */; };
 		431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F428AF5AF400FE1931 /* ProductCard.swift */; };
 		431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F628AF7D2400FE1931 /* ProgressView.swift */; };
@@ -37,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4314533D28B297AB008F5085 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
+		4314533F28B297F3008F5085 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		431502F428AF5AF400FE1931 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		431502F628AF7D2400FE1931 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4314534628B298CB008F5085 /* UICircularProgressRing in Frameworks */,
+				4314534328B298B5008F5085 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +161,7 @@
 		5684C7D828AA5C6100A39497 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				4314533D28B297AB008F5085 /* ProgressModel.swift */,
 				5688538A28ADEA8D008080B5 /* Routine.swift */,
 				5688538C28ADEB3B008080B5 /* Product.swift */,
 				56B4670228B341BA00691150 /* RoutineDay.swift */,
@@ -164,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				5688538828ADE3A5008080B5 /* RoutineVewModel.swift */,
+				4314533F28B297F3008F5085 /* ProgressViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -232,6 +242,10 @@
 			dependencies = (
 			);
 			name = mc3_menGlow;
+			packageProductDependencies = (
+				4314534228B298B5008F5085 /* Algorithms */,
+				4314534528B298CB008F5085 /* UICircularProgressRing */,
+			);
 			productName = mc3_menGlow;
 			productReference = 5684C7C128AA5C2A00A39497 /* mc3_menGlow.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +274,10 @@
 				Base,
 			);
 			mainGroup = 5684C7B828AA5C2900A39497;
+			packageReferences = (
+				4314534128B298B5008F5085 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				4314534428B298CA008F5085 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */,
+			);
 			productRefGroup = 5684C7C228AA5C2A00A39497 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -296,6 +314,7 @@
 				431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */,
 				56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */,
 				563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */,
+				4314533E28B297AB008F5085 /* ProgressModel.swift in Sources */,
 				566235FC28AB755C00EB6B3A /* UIScreen+Extension.swift in Sources */,
 				5684C7C728AA5C2A00A39497 /* ContentView.swift in Sources */,
 				5688538928ADE3A5008080B5 /* RoutineVewModel.swift in Sources */,
@@ -305,6 +324,7 @@
 				566235F028AA9BD900EB6B3A /* Theme.swift in Sources */,
 				431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */,
 				5684C7D128AA5C2B00A39497 /* mc3_menGlow.xcdatamodeld in Sources */,
+				4314534028B297F3008F5085 /* ProgressViewModel.swift in Sources */,
 				566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */,
 				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,
 				431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */,
@@ -511,6 +531,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4314534128B298B5008F5085 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		4314534428B298CA008F5085 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luispadron/UICircularProgressRing";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4314534228B298B5008F5085 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4314534128B298B5008F5085 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		4314534528B298CB008F5085 /* UICircularProgressRing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4314534428B298CA008F5085 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */;
+			productName = UICircularProgressRing;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		5684C7CF28AA5C2B00A39497 /* mc3_menGlow.xcdatamodeld */ = {
