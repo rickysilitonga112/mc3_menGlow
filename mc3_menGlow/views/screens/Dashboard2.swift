@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+ 
 struct Dashboard2: View {
     
     @StateObject var routineVM = RoutineViewModel.shared
@@ -42,9 +42,9 @@ struct Dashboard2: View {
                         .offset(x: 80, y: -10)
                         
                     }
-                    HStack{
+                    HStack {
                         Button{
-                            //                            routineVM.getIndex(id: 0)
+                            
                         } label: {
                             Image(systemName: "sun.max.circle.fill")
                                 .resizable()
@@ -55,7 +55,7 @@ struct Dashboard2: View {
                         Text("- - - -")
                             .foregroundColor(Color("Strip"))
                         
-                        Button{
+                        Button {
                             
                         } label: {
                             Image(systemName: "moon.circle.fill")
@@ -96,10 +96,10 @@ struct Dashboard2: View {
                     
                     ScrollView(showsIndicators: false){
                         ProductCard(routine: $routine)
-                        PrimaryButton(title: "Complete Task") {
-                            
-                        }
-                    }.frame(maxHeight: 380)
+                    }.frame(maxHeight: 320)
+                    PrimaryButton(title: "Done") {
+                        
+                    }
                     
                     
                 }

@@ -1,38 +1,40 @@
 //
-//  TabBarView.swift
+//  MainView.swift
 //  mc3_menGlow
 //
-//  Created by Amalia . on 20/08/22.
+//  Created by Ricky Silitonga on 22/08/22.
 //
 
 import SwiftUI
 
-struct TabBarView: View {
+struct MainView: View {
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.blue
-//        UITabBar.appearance().barTintColor = UIColor(named: "TabBarColor")
-      }
+        UITabBar.appearance().backgroundColor = UIColor(red: 50/255, green: 52/255, blue: 42/255, alpha: 1)
+        
+        UITabBar.appearance().unselectedItemTintColor = UIColor(red: 152/255, green: 154/255, blue: 148/255, alpha: 1)
+    }
+    
     var body: some View {
         NavigationView {
-            TabView{
-                RoutineListView()
-                    .tabItem{
+            TabView {
+                DashboardView()
+                    .tabItem {
                         Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                         Text("Routine")
                     }
                 
-                Dashboard2()
-                    .tabItem{
+                RoutineListView()
+                    .tabItem {
+                        
                         Image(systemName: "checklist")
                         Text("Activity")
                     }
-                
-               
                 
                 ProgressView()
                     .tabItem{
                         Image(systemName: "chart.bar.fill")
                         Text("Progress")
+                        
                     }
                 
                 MySkinView()
@@ -40,14 +42,16 @@ struct TabBarView: View {
                         Image(systemName: "person.text.rectangle.fill")
                         Text("My Skin")
                     }
+                
             }
             .accentColor(.white)
         }
+        
     }
 }
 
-struct TabBarView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView()
+        MainView()
     }
 }

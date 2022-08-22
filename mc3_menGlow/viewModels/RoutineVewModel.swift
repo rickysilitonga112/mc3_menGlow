@@ -34,7 +34,7 @@ class RoutineViewModel: ObservableObject {
     ]
     
     // nyimpan history
-    
+    @Published var record: [Record] = []
     
     
     func addNewRoutine(_ newRoutine: Routine) {
@@ -51,9 +51,21 @@ class RoutineViewModel: ObservableObject {
         }
     }
     
+    func addRecord(_ newrecord: Record) {
+        record.append(newrecord)
+    }
+    
 //    func getIndex(id: UUID) -> Int {
 //        var index = 0
 //         
 //        return index
 //    }
+    
+    struct Record: Identifiable {
+        var id = UUID()
+        
+        let routineTitle: String
+        let time: Date
+        var product: [Product]
+    }
 }
