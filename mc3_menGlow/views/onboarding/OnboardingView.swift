@@ -26,31 +26,30 @@ struct OnboardingView: View {
     
     var body: some View{
         ZStack{
-             
+            
             ForEach(intros.indices.reversed(),id: \.self){index in
                 // Intro view
                 IntroView(intro: intros[index])
                     .clipShape(LiquidShape(offset: intros[index].offset,
-                                           curvePoint: fakeIndex == index ? 50 : 0))
-                    .padding(.trailing, fakeIndex == index ? 15 : 0)
+                                           curvePoint: fakeIndex == index ? 70 : 0))
+                
+                //                    .padding(.trailing, fakeIndex == index ? 15 : 0)
                     .ignoresSafeArea()
             }
             
             HStack(spacing: 8){
-                
+                //                Spacer()
                 ForEach(0..<intros.count - 2, id: \.self){index in
                     
                     Circle()
-                        .fill(Color("TabBarColor"))
+                        .fill(Color("DarkGreen"))
                         .frame(width: 10, height: 10)
-                        .scaleEffect(currentIndex == index ? 1.5 : 1.25)
+                        .scaleEffect(currentIndex == index ? 1 : 0.8)
                         .opacity(currentIndex == index ? 1 : 0.5)
-
-          
+                        .padding(10)
+                    //                    Spacer()
                     
-                   
                 }
-                
                 Spacer()
                 
                 Button{
@@ -58,8 +57,8 @@ struct OnboardingView: View {
                 }label:{
                     Text("Skip")
                         .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor (Color("Brown"))
+                        .fontWeight(.medium)
+                        .foregroundColor(Color("Brown"))
                 }
             }
             .padding()
@@ -73,7 +72,7 @@ struct OnboardingView: View {
             }, label: {
                 Image(systemName: "chevron.left")
                     .font(.largeTitle)
-                    .frame(width: 50, height: 50)
+                    .frame(width: 50, height: 600)
                     .foregroundColor(.white)
                     .contentShape(Rectangle())
                     .gesture(
@@ -92,7 +91,7 @@ struct OnboardingView: View {
                                     
                                     if -intros[fakeIndex].offset.width > getRect().width / 2{
                                         
-                                        intros [fakeIndex].offset.width = -getRect().height * 5
+                                        intros [fakeIndex].offset.width = -getRect().height * 1.5
                                         
                                         fakeIndex += 1
                                         
@@ -124,8 +123,8 @@ struct OnboardingView: View {
                             })
                     )
             })
-            .offset(y: 53)
-            .opacity(isDragging ? 0 : 1)
+            .offset(y: 80)
+            .opacity(isDragging ? 0 : 4)
             .animation(.linear, value: isDragging)
             
             ,alignment: .topTrailing
@@ -147,121 +146,122 @@ struct OnboardingView: View {
             fakeIndex = 1
         }
     }
-     
+    
     @ViewBuilder
     func IntroView(intro: Intro)->some View{
         
-        ZStack{
+        VStack{
             VStack{
                 
                 Image(intro.pic)
                     .resizable()
-                    .aspectRatio(contentMode: .fit )
-                    .padding(40)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                
+            }
+            
+            VStack(alignment: .leading, spacing: 0){
                 Spacer()
-                VStack(alignment: .leading, spacing: 0){
-                    
-                    Text(intro.title)
-                        .font(.system(size: 35))
-                    
-                    Text(intro.subTitle)
-                        .font(.system(size:50, weight: .bold))
-                    
-                    Text(intro.description)
-                        .font(.system(size: 20))
-                        .fontWeight(.semibold)
-                        .padding(.top)
-                        .frame(width: CGRect().width - 100)
-                        .lineSpacing(8)
+                Text(intro.title)
+                    .font(.system(size: 25))
+                    .fontWeight(.medium)
                 
-                .foregroundColor(.white)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading,20)
-                .padding([.trailing,.top])
+                Text(intro.subTitle)
+                    .font(.system(size:40, weight: .bold))
+                
+                Text(intro.description)
+                    .font(.system(size: 17))
+                    .fontWeight(.regular)
+                
+                //                    .padding(.top)
+                //                    .frame(width: CGRect().width - 10)
+                //                    .lineSpacing(8)
+                //
+                Spacer()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading,20)
+                    .padding([.trailing,.top])
+                //                Spacer()
             }
-              
-            
-        }
             .padding(.horizontal)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(
-                
-                intro.color
-                                .ignoresSafeArea()
-            )
-        }
-       
-}
-}
-    //Extending View to get Screens Bounds...
-extension View{
-        
-        func getRect()->CGRect{
-            return UIScreen.main.bounds
-        }
-    }
-    
-struct OnboardingView_Previews: PreviewProvider {
-        static var previews: some View {
-            OnboardingView()
-        }
-    }
-    
-    
-    //For more on Liquid Swipe see my l
-struct LiquidShape: Shape{
-        
-        var  offset: CGSize
-        var curvePoint: CGFloat
-        
-        var animatableData: AnimatablePair<CGSize.AnimatableData,GLfloat>{
-            get{
-                return AnimatablePair(offset.animatableData,GLfloat(curvePoint))
-            }
-            set {
-                offset.animatableData = newValue.first
-                curvePoint =  CGFloat(newValue.second)
-            }
-        }
-        
-        func path(in rect: CGRect) -> Path{
+            .background(Color("BackgroundColor"))
             
-            return Path{path in
-                //when user moves left
-                //increasing size both in top and bottom
-                //so it will create a liquid swipe effect
-                
-                let width = rect.width + (-offset.width > 0 ? offset.width: 0)
-                
-                //First Constructing Rectangle Shape
-                path.move(to: CGPoint(x: 0, y: 0))
-                path.addLine (to: CGPoint (x: rect.width, y: 0))
-                path.addLine (to: CGPoint (x: rect.width, y: rect.height))
-                path.addLine(to: CGPoint (x: 0, y: rect.height))
-                
-                //Now constructing Curve Shape
-                //from
-                
-                let from = 80 + (offset.width)
-                path.move(to: CGPoint(x: rect.width, y: from > 80 ? 80 : from))
-                
-                //Also adding height
-                var to = 180 + (offset.height) + (-offset.width)
-                to = to < 180 ? 180 : to
-                
-                // Mid Between 80-180
-                let mid: CGFloat = 80 + ((to - 80) / 2 )
-                
-                path .addCurve(to: CGPoint (x: rect.width, y: to), control1: CGPoint(x: width - curvePoint, y: mid), control2: CGPoint(x: width - curvePoint, y: mid))
-            }
+        }
+        
+        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            
+            intro.color
+                .ignoresSafeArea()
+        )
+    }
+    
+}
+
+//Extending View to get Screens Bounds...
+extension View{
+    
+    func getRect()->CGRect{
+        return UIScreen.main.bounds
+    }
+}
+
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnboardingView()
+    }
+}
+
+
+struct LiquidShape: Shape{
+    
+    var  offset: CGSize
+    var curvePoint: CGFloat
+    
+    var animatableData: AnimatablePair<CGSize.AnimatableData,GLfloat>{
+        get{
+            return AnimatablePair(offset.animatableData,GLfloat(curvePoint))
+        }
+        set {
+            offset.animatableData = newValue.first
+            curvePoint =  CGFloat(newValue.second)
         }
     }
+    
+    func path(in rect: CGRect) -> Path{
+        
+        return Path{path in
+            //when user moves left
+            //increasing size both in top and bottom
+            //so it will create a liquid swipe effect
+            
+            let width = rect.width + (-offset.width > 0 ? offset.width: 0)
+            
+            //First Constructing Rectangle Shape
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine (to: CGPoint (x: rect.width, y: 0))
+            path.addLine (to: CGPoint (x: rect.width, y: rect.height))
+            path.addLine(to: CGPoint (x: 0, y: rect.height))
+            
+            //Now constructing Curve Shape
+            //from
+            
+            let from = 300 + (offset.width)
+            path.move(to: CGPoint(x: rect.width, y: from > 300 ? 300 :from))
+            
+            //Also adding height
+            var to = 750 + (offset.height) + (-offset.width)
+            to = to < 550 ? 550 : to
+            
+            
+            // Mid Between 80-180
+            let mid: CGFloat = 80 + ((to - 80) / 2 )
+            
+            path .addCurve(to: CGPoint (x: rect.width, y: to), control1: CGPoint(x: width - curvePoint, y: mid), control2: CGPoint(x: width - curvePoint, y: mid))
+//
+//            path.addCurve(to: CGPoint(x: width, y: 180), control1: CGPoint (x: width - 50, y: mid), control2: CGPoint (x: width - 50, y: mid))
+        }
+    }
+}
 
-
-
-
-//struct OnboardingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        OnboardingView()
-//    }
-//}
