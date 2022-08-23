@@ -20,13 +20,19 @@ class RoutineViewModel: ObservableObject {
             image: "routinelist_morning",
             time: Date.now,
             isEnable: false,
-            products: Product.getProduct())
+            products: Product.getProduct()),
 //        Routine(
-//            title: "Night Routine",
+//            title: "Custom Routine",
 //            image: "routinelist_evening",
 //            time: Date.now,
 //            isEnable: false,
-//            products: Product.getProduct())
+//            products: Product.getProduct()),
+        Routine(
+            title: "Night Routine",
+            image: "routinelist_evening",
+            time: Date.now,
+            isEnable: false,
+            products: Product.getProduct())
     ]
     
     // nyimpan history

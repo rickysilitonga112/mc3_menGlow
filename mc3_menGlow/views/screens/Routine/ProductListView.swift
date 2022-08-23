@@ -40,9 +40,9 @@ struct ProductListView: View {
 struct ProductListView_Previews: PreviewProvider {
     static var previews: some View {
         ProductListView(products: .constant([
-            Product(title: "Cleanser", isCheck: true, productName: "", icon: ""),
-            Product(title: "Moisturizer", isCheck: true, productName: "", icon: ""),
-            Product(title: "Toner", isCheck: false, productName: "", icon: "")
+            Product(title: "Cleanser", isCheck: true, productName: "", icon: "", isUsed: false),
+            Product(title: "Moisturizer", isCheck: true, productName: "", icon: "", isUsed: false),
+            Product(title: "Toner", isCheck: false, productName: "", icon: "", isUsed: false)
         ]), presentSheet: .constant(true))
     }
 }

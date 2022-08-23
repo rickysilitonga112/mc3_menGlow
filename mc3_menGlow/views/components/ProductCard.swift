@@ -51,8 +51,12 @@ struct ProductCard: View {
                                         Image(systemName: "checkmark.circle.fill")
                                             .resizable()
                                             .frame(width: 28, height: 28)
-                                            .opacity(0)
+                                            .foregroundColor(Color("OldGreen"))
+                                            .opacity(product.isUsed ? 1: 0)
                                     }
+                            }
+                            .onTapGesture {
+                                product.isUsed.toggle()
                             }
                         
                     }
@@ -66,7 +70,7 @@ struct ProductCard: View {
 struct ProductCard_Previews: PreviewProvider {
     static var previews: some View {
         ProductCard(routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [
-        Product(title: "Cleanser", isCheck: false, productName: "blasalsas", icon: "")
-        ], image2: "")))
+            Product(title: "Cleanser", isCheck: false, productName: "blasalsas", icon: "", isUsed: false)
+        ])))
     }
 }
