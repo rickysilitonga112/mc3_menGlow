@@ -72,23 +72,25 @@ struct CustomRoutine: View {
                 }
             } .padding(.horizontal)
             
-            LazyVStack {
-                ForEach($newRoutine.products) { $product in
-                    if product.isCheck {
-                        VStack {
-                            HStack {
-                                Text(product.title)
-                                Spacer()
-                                Button {
-                                    product.isCheck.toggle()
-                                } label: {
-                                    Image(systemName: "xmark.circle.fill")
-                                        .frame(width: 20, height: 22)
-                                        .foregroundColor(.secondary)
+            ScrollView {
+                LazyVStack {
+                    ForEach($newRoutine.products) { $product in
+                        if product.isCheck {
+                            VStack {
+                                HStack {
+                                    Text(product.title)
+                                    Spacer()
+                                    Button {
+                                        product.isCheck.toggle()
+                                    } label: {
+                                        Image(systemName: "xmark.circle.fill")
+                                            .frame(width: 20, height: 22)
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
+                                
+                                TextField("Product Name", text: $product.productName)
                             }
-                            
-                            TextField("Product Name", text: $product.productName)
                         }
                     }
                 }

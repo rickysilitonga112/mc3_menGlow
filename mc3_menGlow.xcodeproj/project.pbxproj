@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321FC7D628B4C9D900A5794D /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321FC7D528B4C9D900A5794D /* Intro.swift */; };
+		3280A93B28B28055005D8640 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4314533E28B297AB008F5085 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314533D28B297AB008F5085 /* ProgressModel.swift */; };
 		4314534028B297F3008F5085 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314533F28B297F3008F5085 /* ProgressViewModel.swift */; };
 		4314534328B298B5008F5085 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4314534228B298B5008F5085 /* Algorithms */; };
@@ -19,6 +21,7 @@
 		43764F6428B07B4D00517399 /* MySkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6328B07B4D00517399 /* MySkinView.swift */; };
 		563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DFCC028B20E9D00AD3175 /* TagView.swift */; };
 		564CB9CB28B3961D0027C389 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CB9CA28B3961D0027C389 /* DashboardView.swift */; };
+		564CB9CD28B3EC3C0027C389 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CB9CC28B3EC3C0027C389 /* Date+Extension.swift */; };
 		566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235ED28AA9B7900EB6B3A /* Constant.swift */; };
 		566235F028AA9BD900EB6B3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235EF28AA9BD900EB6B3A /* Theme.swift */; };
 		566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566235F128AB576A00EB6B3A /* RoutineListView.swift */; };
@@ -43,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321FC7D528B4C9D900A5794D /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		4314533D28B297AB008F5085 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		4314533F28B297F3008F5085 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -53,13 +57,14 @@
 		43764F6328B07B4D00517399 /* MySkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinView.swift; sourceTree = "<group>"; };
 		563DFCC028B20E9D00AD3175 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		564CB9CA28B3961D0027C389 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		564CB9CC28B3EC3C0027C389 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		566235ED28AA9B7900EB6B3A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		566235EF28AA9BD900EB6B3A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		566235F128AB576A00EB6B3A /* RoutineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListView.swift; sourceTree = "<group>"; };
 		566235F328AB57A300EB6B3A /* AddRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoutineView.swift; sourceTree = "<group>"; };
 		566235F828AB717000EB6B3A /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		566235FB28AB755C00EB6B3A /* UIScreen+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
-		5684C7C128AA5C2A00A39497 /* mc3_menGlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mc3_menGlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5684C7C128AA5C2A00A39497 /* GoGlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoGlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5684C7C428AA5C2A00A39497 /* mc3_menGlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc3_menGlowApp.swift; sourceTree = "<group>"; };
 		5684C7C628AA5C2A00A39497 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5684C7C828AA5C2B00A39497 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				566235FB28AB755C00EB6B3A /* UIScreen+Extension.swift */,
+				564CB9CC28B3EC3C0027C389 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -120,7 +126,7 @@
 		5684C7C228AA5C2A00A39497 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5684C7C128AA5C2A00A39497 /* mc3_menGlow.app */,
+				5684C7C128AA5C2A00A39497 /* GoGlow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 				5688538A28ADEA8D008080B5 /* Routine.swift */,
 				5688538C28ADEB3B008080B5 /* Product.swift */,
 				56B4670228B341BA00691150 /* RoutineDay.swift */,
+				321FC7D528B4C9D900A5794D /* Intro.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -253,7 +260,7 @@
 				4314534528B298CB008F5085 /* UICircularProgressRing */,
 			);
 			productName = mc3_menGlow;
-			productReference = 5684C7C128AA5C2A00A39497 /* mc3_menGlow.app */;
+			productReference = 5684C7C128AA5C2A00A39497 /* GoGlow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -310,14 +317,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3280A93B28B28055005D8640 /* (null) in Sources */,
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
 				56EDB0C028B391D200E6BBF0 /* MainView.swift in Sources */,
 				5688538B28ADEA8D008080B5 /* Routine.swift in Sources */,
 				43764F6428B07B4D00517399 /* MySkinView.swift in Sources */,
 				56B4670328B341BA00691150 /* RoutineDay.swift in Sources */,
+				564CB9CD28B3EC3C0027C389 /* Date+Extension.swift in Sources */,
 				5688539428AE3385008080B5 /* ProductListView.swift in Sources */,
 				566235F428AB57A300EB6B3A /* AddRoutineView.swift in Sources */,
 				566235F928AB717000EB6B3A /* PrimaryButton.swift in Sources */,
+				321FC7D628B4C9D900A5794D /* Intro.swift in Sources */,
 				431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */,
 				56A5EB9D28AE87B500E44759 /* CustomRoutineView.swift in Sources */,
 				563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */,
@@ -465,9 +475,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"mc3_menGlow/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -475,13 +485,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rsilitonga.mc3-menGlow";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GoGlow;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -494,9 +505,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"mc3_menGlow/Preview Content\"";
-				DEVELOPMENT_TEAM = C8B3R9N352;
+				DEVELOPMENT_TEAM = KFD27J2TGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -504,13 +515,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rsilitonga.mc3-menGlow";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = GoGlow;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

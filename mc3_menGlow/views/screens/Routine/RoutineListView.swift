@@ -48,7 +48,6 @@ struct RoutineListView: View {
             ScrollView {
                 LazyVStack {
                     ForEach($routineVM.routineList) { $routine in
-                        
                         ZStack {
                             Image("\(routine.image)")
                                 .resizable()
@@ -70,7 +69,7 @@ struct RoutineListView: View {
                                                 Text("Notification:")
                                                     .fontWeight(.semibold)
                                                     .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
-                                                Text("08.30 AM Daily")
+                                                Text("\(routine.time.getFormattedDate(format: "HH:mm a"))")
                                                     .fontWeight(.semibold)
                                                     .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
                                             }
@@ -78,11 +77,7 @@ struct RoutineListView: View {
                                         }
                                         Spacer()
                                         HStack {
-                                            //                                                    ForEach(0 ..< 5) { item in
-                                            //                                                        TagView(title: "Cleanser")
-                                            //                                                    }
-                                            TagViewPlacement(items: ["Cleanser", "Moisturizer", "Toner", "Sabu", "Makser"])
-                                            
+                                            TagViewPlacement(items: routineVM.getTagViewItem(routine: routine))
                                             Spacer()
                                         }
                                     }
@@ -101,8 +96,6 @@ struct RoutineListView: View {
             }
             
             Spacer()
-            
-            
         }
         .ignoresSafeArea(edges: .top)
         .frame(alignment: .top)
