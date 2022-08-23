@@ -16,8 +16,14 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    @AppStorage("showOnboarding") var showOnboarding: Bool = true
+    
     var body: some View {
-        MainView()
+        if showOnboarding {
+            OnboardingView()
+        } else {
+            MainView()
+        }
     }
 
     private func addItem() {

@@ -13,8 +13,7 @@ struct mc3_menGlowApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            OnboardingView()
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -19,140 +19,146 @@ struct OnboardingView: View {
               description: "Never missed any routine and claim badges as reward", pic: "Onboarding3new", color: Color("Brown")),
     ]
     
-    @GestureState var isDragging: Bool = false
     
+    @AppStorage("showOnboarding") var showOnboarding: Bool = true
+    @State var session: String? = nil
+    
+    @GestureState var isDragging: Bool = false
     @State var fakeIndex: Int = 0
     @State var currentIndex: Int = 0
+    @State var isTimeToDashboard: Bool = false
     
     var body: some View{
-        ZStack{
-            
-            ForEach(intros.indices.reversed(),id: \.self){index in
-                // Intro view
-                IntroView(intro: intros[index])
-                    .clipShape(LiquidShape(offset: intros[index].offset,
-                                           curvePoint: fakeIndex == index ? 70 : 0))
+        NavigationView {
+            ZStack{
                 
-                //                    .padding(.trailing, fakeIndex == index ? 15 : 0)
-                    .ignoresSafeArea()
-            }
-            
-            HStack(spacing: 8){
-                //                Spacer()
-                ForEach(0..<intros.count - 2, id: \.self){index in
-                    
-                    Circle()
-                        .fill(Color("DarkGreen"))
-                        .frame(width: 10, height: 10)
-                        .scaleEffect(currentIndex == index ? 1 : 0.8)
-                        .opacity(currentIndex == index ? 1 : 0.5)
-                        .padding(10)
-                    //                    Spacer()
-                    
+                ForEach(intros.indices.reversed(),id: \.self) { index in
+                    IntroView(intro: intros[index])
+                        .clipShape(LiquidShape(offset: intros[index].offset, curvePoint: fakeIndex == index ? 70 : 0))
+                        .ignoresSafeArea()
                 }
-                Spacer()
                 
-                Button{
+                HStack(spacing: 8){
+                    ForEach(0..<intros.count - 2, id: \.self) { index in
+                        
+                        Circle()
+                            .fill(Color("DarkGreen"))
+                            .frame(width: 10, height: 10)
+                            .scaleEffect(currentIndex == index ? 1 : 0.8)
+                            .opacity(currentIndex == index ? 1 : 0.5)
+                            .padding(10)
+                        
+                    }
+                    Spacer()
                     
-                }label:{
-                    Text("Skip")
-                        .font(.title2)
-                        .fontWeight(.medium)
-                        .foregroundColor(Color("Brown"))
+                    NavigationLink(destination: MainView(), tag: "gotoMain", selection: $session) {
+                        Button{
+                            showOnboarding = false
+                            session = "gotoMain"
+                        }label:{
+                            Text(isTimeToDashboard ? "Start Journey" : "Skip")
+                                .font(.title2)
+                                .fontWeight(isTimeToDashboard ? .semibold : .medium)
+                                .foregroundColor(Color("Brown"))
+                    }
+                    }
                 }
+                .padding()
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
             }
-            .padding()
-            .padding(.horizontal)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-        }
-        .overlay(
-            
-            Button(action: {
+            .overlay(
                 
-            }, label: {
-                Image(systemName: "chevron.left")
-                    .font(.largeTitle)
-                    .frame(width: 50, height: 600)
-                    .foregroundColor(.white)
-                    .contentShape(Rectangle())
-                    .gesture(
-                        DragGesture()
-                            .updating($isDragging, body: { value, out, _ in
-                                out = true
-                            })
-                            .onChanged({ value in
-                                withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.8, blendDuration: 0.6)){
-                                    
-                                    intros[fakeIndex].offset = value.translation
-                                }
-                            })
-                            .onEnded({ value in
-                                withAnimation(.spring()){
-                                    
-                                    if -intros[fakeIndex].offset.width > getRect().width / 2{
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "chevron.left")
+                        .font(.largeTitle)
+                        .frame(width: 50, height: 600)
+                        .foregroundColor(.white)
+                        .contentShape(Rectangle())
+                        .gesture(
+                            DragGesture()
+                                .updating($isDragging, body: { value, out, _ in
+                                    out = true
+                                })
+                                .onChanged({ value in
+                                    withAnimation(.interactiveSpring(response: 0.7, dampingFraction: 0.8, blendDuration: 0.6)){
                                         
-                                        intros [fakeIndex].offset.width = -getRect().height * 1.5
-                                        
-                                        fakeIndex += 1
-                                        
-                                        if currentIndex == intros.count - 3{
-                                            currentIndex = 0
-                                        }
-                                        else{
-                                            currentIndex += 1
+                                        intros[fakeIndex].offset = value.translation
+                                    }
+                                })
+                                .onEnded({ value in
+                                    withAnimation(.spring()) {
+                                        if -intros[fakeIndex].offset.width > getRect().width / 2 {
                                             
-                                        }
-                                        
-                                        // some delay to finish
-                                        
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4){
-                                            if fakeIndex == (intros.count - 2){
+                                            intros [fakeIndex].offset.width = -getRect().height * 1.5
+                                            
+                                            fakeIndex += 1
+                                            
+                                            if currentIndex == intros.count - 3 {
                                                 
-                                                for index in 0..<intros.count - 2{
-                                                    intros[index].offset = .zero
+                                                print("\(currentIndex) | \(intros.count - 3) | \(fakeIndex)")
+                                                print("ended")
+                                                
+                                                currentIndex = 0
+                                                
+                                                if isTimeToDashboard == false {
+                                                    isTimeToDashboard = true
                                                 }
+                                            }
+                                            else{
+                                                currentIndex += 1
                                                 
-                                                fakeIndex = 0
+                                            }
+                                            
+                                            // some delay to finish
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4){
+                                                if fakeIndex == (intros.count - 2){
+                                                    for index in 0..<intros.count - 2{
+                                                        intros[index].offset = .zero
+                                                    }
+                                                    
+                                                    fakeIndex = 0
+                                                }
                                             }
                                         }
+                                        else{
+                                            intros[fakeIndex].offset = .zero
+                                        }
                                     }
-                                    else{
-                                        intros[fakeIndex].offset = .zero
-                                    }
-                                }
-                            })
-                    )
-            })
-            .offset(y: 80)
-            .opacity(isDragging ? 0 : 4)
-            .animation(.linear, value: isDragging)
-            
-            ,alignment: .topTrailing
-        )
-        .onAppear{
-            
-            guard let  first = intros.first else {
-                return
-            }
-            guard var last = intros.last else {
-                return
-            }
-            
-            last.offset.width = -getRect().height * 1.5
-            
-            intros.append(first)
-            intros.insert(last, at: 0)
-            
-            fakeIndex = 1
+                                })
+                        )
+                })
+                .offset(y: 80)
+                .opacity(isDragging ? 0 : 4)
+                .animation(.linear, value: isDragging)
+                
+                ,alignment: .topTrailing
+            )
+            .onAppear{
+                
+                guard let  first = intros.first else {
+                    return
+                }
+                guard var last = intros.last else {
+                    return
+                }
+                
+                last.offset.width = -getRect().height * 1.5
+                
+                intros.append(first)
+                intros.insert(last, at: 0)
+                
+                fakeIndex = 1
+        }
         }
     }
     
     @ViewBuilder
-    func IntroView(intro: Intro)->some View{
-        
+    func IntroView(intro: Intro) -> some View {
         VStack{
             VStack{
-                
                 Image(intro.pic)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -173,25 +179,17 @@ struct OnboardingView: View {
                     .font(.system(size: 17))
                     .fontWeight(.regular)
                 
-                //                    .padding(.top)
-                //                    .frame(width: CGRect().width - 10)
-                //                    .lineSpacing(8)
-                //
                 Spacer()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading,20)
                     .padding([.trailing,.top])
-                //                Spacer()
             }
             .padding(.horizontal)
             .background(Color("BackgroundColor"))
             
         }
-        
-        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            
             intro.color
                 .ignoresSafeArea()
         )
@@ -199,7 +197,6 @@ struct OnboardingView: View {
     
 }
 
-//Extending View to get Screens Bounds...
 extension View{
     
     func getRect()->CGRect{
@@ -216,7 +213,7 @@ struct OnboardingView_Previews: PreviewProvider {
 
 struct LiquidShape: Shape{
     
-    var  offset: CGSize
+    var offset: CGSize
     var curvePoint: CGFloat
     
     var animatableData: AnimatablePair<CGSize.AnimatableData,GLfloat>{
@@ -230,7 +227,6 @@ struct LiquidShape: Shape{
     }
     
     func path(in rect: CGRect) -> Path{
-        
         return Path{path in
             //when user moves left
             //increasing size both in top and bottom
@@ -244,9 +240,6 @@ struct LiquidShape: Shape{
             path.addLine (to: CGPoint (x: rect.width, y: rect.height))
             path.addLine(to: CGPoint (x: 0, y: rect.height))
             
-            //Now constructing Curve Shape
-            //from
-            
             let from = 300 + (offset.width)
             path.move(to: CGPoint(x: rect.width, y: from > 300 ? 300 :from))
             
@@ -258,9 +251,8 @@ struct LiquidShape: Shape{
             // Mid Between 80-180
             let mid: CGFloat = 80 + ((to - 80) / 2 )
             
-            path .addCurve(to: CGPoint (x: rect.width, y: to), control1: CGPoint(x: width - curvePoint, y: mid), control2: CGPoint(x: width - curvePoint, y: mid))
-//
-//            path.addCurve(to: CGPoint(x: width, y: 180), control1: CGPoint (x: width - 50, y: mid), control2: CGPoint (x: width - 50, y: mid))
+            path .addCurve(to: CGPoint (x: rect.width, y: to), control1: CGPoint(x: width - curvePoint, y: mid), control2: CGPoint(x: width - curvePoint, y: mid)
+            )
         }
     }
 }
