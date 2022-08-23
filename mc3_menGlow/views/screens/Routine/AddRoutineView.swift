@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct AddRoutineView: View {
-    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var routineVM: RoutineViewModel
     @State var presentSheet: Bool = false
     @Binding var routine: Routine
     
-    @State var products = [Product]()
+    @State var newProducts = [Product]()
+    @State var newTime: Date = Date.now
     
     var body: some View {
         VStack(spacing: 30) {
@@ -21,7 +22,7 @@ struct AddRoutineView: View {
                 Text("Time for routine")
                     .fontWeight(.semibold)
                 Spacer()
-                DatePicker("", selection: $routine.time, displayedComponents: .hourAndMinute)
+                DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
                     .labelsHidden()
             }
             
@@ -31,35 +32,42 @@ struct AddRoutineView: View {
                 Spacer()
             }
             
-            ForEach($products) { $product in
-                if product.isCheck {
-                    VStack {
-                        HStack {
-                            Text(product.title)
-                            Spacer()
-                            Button {
-                                product.isCheck.toggle()
-                            } label: {
-                                Image(systemName: "xmark.circle.fill")
-                                    .frame(width: 20, height: 22)
-                                    .foregroundColor(.secondary)
+            ScrollView {
+                ForEach($newProducts) { $product in
+                    if product.isCheck {
+                        VStack {
+                            HStack {
+                                Text(product.title)
+                                Spacer()
+                                Button {
+                                    product.isCheck.toggle()
+                                } label: {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .frame(width: 20, height: 22)
+                                        .foregroundColor(.secondary)
+                                }
                             }
+                            
+                            TextField("Product Name", text: $product.productName)
                         }
-                        
-                        TextField("Product Name", text: $product.productName)
                     }
+                }
+                AddProductButton(title: "Add New Product") {
+                    presentSheet.toggle()
                 }
             }
             
-            AddProductButton(title: "Add New Product") {
-                presentSheet.toggle()
-            }
+            
             
             Spacer()
             HStack {
                 Spacer()
                 PrimaryButton(title: "Save") {
                     // Save new routine
+                    routine.products = newProducts
+                    routine.time = newTime
+                    print("\(routine.time)")
+                    self.presentationMode.wrappedValue.dismiss()
                     
                 }
                 Spacer()
@@ -69,10 +77,10 @@ struct AddRoutineView: View {
         }
         .padding(.horizontal)
         .onAppear(perform: {
-            products = routine.products
+            newProducts = routine.products
         })
         .sheet(isPresented: $presentSheet) {
-            ProductListView(products: $products, presentSheet: $presentSheet)
+            ProductListView(products: $newProducts, presentSheet: $presentSheet)
         }
         .navigationTitle(routine.title)
         .navigationBarTitleDisplayMode(.large)

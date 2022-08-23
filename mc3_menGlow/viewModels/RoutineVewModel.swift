@@ -55,17 +55,24 @@ class RoutineViewModel: ObservableObject {
         record.append(newrecord)
     }
     
-//    func getIndex(id: UUID) -> Int {
-//        var index = 0
-//         
-//        return index
-//    }
-    
-    struct Record: Identifiable {
-        var id = UUID()
+    func getTagViewItem(routine: Routine) -> [String] {
+        var tagItems: [String] = []
         
-        let routineTitle: String
-        let time: Date
-        var product: [Product]
+        for product in routine.products {
+            if product.isCheck {
+                tagItems.append(product.title)
+            }
+        }
+        
+        return tagItems
     }
+    
+}
+
+struct Record: Identifiable {
+    var id = UUID()
+    
+    let routineTitle: String
+    let time: Date
+    var product: [Product]
 }
