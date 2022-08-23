@@ -9,13 +9,16 @@ import SwiftUI
 
 struct DashboardView: View {
     private let screenWidth = UIScreen.main.bounds.width
+    private let screenHeight = UIScreen.main.bounds.height
     @State var isCheck: Bool = false
     @StateObject var routineVM = RoutineViewModel.shared
     
     var body: some View {
+//        ScrollView(.horizontal, showsIndicators: false) {
+        ForEach($routineVM.routineList) { $routine in
         VStack {
             ZStack {
-                Image("header_morningsungreen")
+                Image(routine.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: screenWidth)
@@ -37,6 +40,7 @@ struct DashboardView: View {
                             .font(.caption)
                     }
                 } .padding(.horizontal)
+                    .foregroundColor(routine.title == "Morning Routine" ? .black : .white)
             }
             
             HStack {
@@ -46,7 +50,20 @@ struct DashboardView: View {
                     Image(systemName: "sun.max.circle.fill")
                         .resizable()
                         .frame(width: 40, height: 40)
-                        .foregroundColor(Color("Brown"))
+                        .foregroundColor(routine.title == "Morning Routine" ? Color("Brown") : Color("DisableColor"))
+                }
+                
+                Text("- - - -")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("Strip"))
+                
+                Button{
+                    
+                } label: {
+                    Image(systemName: "circle.grid.3x3.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(routine.title == "Custom Routine" ? Color("Brown") : Color("DisableColor"))
                 }
                 
                 Text("- - - -")
@@ -59,13 +76,13 @@ struct DashboardView: View {
                     Image(systemName: "moon.circle.fill")
                         .resizable()
                         .frame(width: 40, height: 40)
-                        .foregroundColor(Color("DisableColor"))
+                        .foregroundColor(routine.title == "Night Routine" ? Color("Brown") : Color("DisableColor"))
                 }
             }
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Morning Routine")
+                    Text(routine.title)
                         .bold()
                         .font(.largeTitle)
                     Text("08.30 AM")
@@ -86,8 +103,9 @@ struct DashboardView: View {
                                 .overlay {
                                     Image(systemName: "checkmark.circle.fill")
                                         .resizable()
-                                        .foregroundColor(.white)
+                                        .foregroundColor(Color("Brown"))
                                         .frame(width: 32, height: 32)
+                                        .opacity(isCheck ? 1 : 0)
                                 }
                         }
                     }
@@ -102,7 +120,7 @@ struct DashboardView: View {
                 ProductCard(routine: $routineVM.routineList[0])
             }
             
-            PrimaryButton(title: "Complete Task") {
+            PrimaryButton(title: "Done") {
                 // complete task
             }
             
@@ -110,6 +128,12 @@ struct DashboardView: View {
         }
         .ignoresSafeArea(edges: .top)
         .frame(alignment: .top)
+//        .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .background(Color("BackgroundColor"))
+        }
+
+//        }
+//        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }
 
