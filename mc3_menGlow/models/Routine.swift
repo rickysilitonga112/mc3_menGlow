@@ -17,7 +17,6 @@ struct Routine: Identifiable {
     var time: Date
     var isEnable: Bool
     var products: [Product]
-    var image2: String
 }
 
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomRoutine: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var routineVM: RoutineViewModel
-    @State var newRoutine = Routine(title: "Custom Routine", image: "", time: Date.now, isEnable: true, products: [], image2: "")
+    @State var newRoutine = Routine(title: "Custom Routine", image: "", time: Date.now, isEnable: true, products: [])
     @State var presentSheet: Bool = false
     @State var routineDays = [RoutineDay]()
     

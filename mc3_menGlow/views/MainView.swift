@@ -19,15 +19,15 @@ struct MainView: View {
             TabView {
                 DashboardView()
                     .tabItem {
-                        Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-                        Text("Routine")
+                        Image(systemName: "checklist")
+                        Text("Activity")
                     }
                 
                 RoutineListView()
                     .tabItem {
                         
-                        Image(systemName: "checklist")
-                        Text("Activity")
+                        Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                        Text("Routine")
                     }
                 
                 ProgressView()
@@ -45,6 +45,7 @@ struct MainView: View {
                 
             }
             .accentColor(.white)
+            
         }
         
     }

@@ -16,9 +16,8 @@
 		431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */; };
 		431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F428AF5AF400FE1931 /* ProductCard.swift */; };
 		431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F628AF7D2400FE1931 /* ProgressView.swift */; };
-		431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502FA28AFD08300FE1931 /* Dashboard2.swift */; };
-		43764F6228B07AC700517399 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6128B07AC700517399 /* TabBarView.swift */; };
 		43764F6428B07B4D00517399 /* MySkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6328B07B4D00517399 /* MySkinView.swift */; };
+		43FC3F0D28B4BADC00501868 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC3F0C28B4BADC00501868 /* NewView.swift */; };
 		563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DFCC028B20E9D00AD3175 /* TagView.swift */; };
 		564CB9CB28B3961D0027C389 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CB9CA28B3961D0027C389 /* DashboardView.swift */; };
 		564CB9CD28B3EC3C0027C389 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564CB9CC28B3EC3C0027C389 /* Date+Extension.swift */; };
@@ -52,9 +51,8 @@
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		431502F428AF5AF400FE1931 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		431502F628AF7D2400FE1931 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
-		431502FA28AFD08300FE1931 /* Dashboard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard2.swift; sourceTree = "<group>"; };
-		43764F6128B07AC700517399 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		43764F6328B07B4D00517399 /* MySkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinView.swift; sourceTree = "<group>"; };
+		43FC3F0C28B4BADC00501868 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 		563DFCC028B20E9D00AD3175 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		564CB9CA28B3961D0027C389 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		564CB9CC28B3EC3C0027C389 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -229,12 +227,11 @@
 			isa = PBXGroup;
 			children = (
 				564CB9CA28B3961D0027C389 /* DashboardView.swift */,
-				43764F6128B07AC700517399 /* TabBarView.swift */,
-				431502FA28AFD08300FE1931 /* Dashboard2.swift */,
 				431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */,
 				431502F628AF7D2400FE1931 /* ProgressView.swift */,
 				43764F6328B07B4D00517399 /* MySkinView.swift */,
 				566235F528AB57AF00EB6B3A /* Routine */,
+				43FC3F0C28B4BADC00501868 /* NewView.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -321,6 +318,7 @@
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
 				56EDB0C028B391D200E6BBF0 /* MainView.swift in Sources */,
 				5688538B28ADEA8D008080B5 /* Routine.swift in Sources */,
+				43FC3F0D28B4BADC00501868 /* NewView.swift in Sources */,
 				43764F6428B07B4D00517399 /* MySkinView.swift in Sources */,
 				56B4670328B341BA00691150 /* RoutineDay.swift in Sources */,
 				564CB9CD28B3EC3C0027C389 /* Date+Extension.swift in Sources */,
@@ -339,7 +337,6 @@
 				431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */,
 				56FE6AF328B117E500CCFDB7 /* AddProductButton.swift in Sources */,
 				566235F028AA9BD900EB6B3A /* Theme.swift in Sources */,
-				431502FB28AFD08300FE1931 /* Dashboard2.swift in Sources */,
 				5684C7D128AA5C2B00A39497 /* mc3_menGlow.xcdatamodeld in Sources */,
 				4314534028B297F3008F5085 /* ProgressViewModel.swift in Sources */,
 				566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */,
@@ -347,7 +344,6 @@
 				431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */,
 				564CB9CB28B3961D0027C389 /* DashboardView.swift in Sources */,
 				56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */,
-				43764F6228B07AC700517399 /* TabBarView.swift in Sources */,
 				5688538D28ADEB3B008080B5 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

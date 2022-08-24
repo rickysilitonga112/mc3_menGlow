@@ -16,6 +16,7 @@ struct RoutineListView: View {
     
     
     var body: some View {
+        
         VStack {
             Image("header_allpage")
                 .resizable()
@@ -98,6 +99,9 @@ struct RoutineListView: View {
         }
         .ignoresSafeArea(edges: .top)
         .frame(alignment: .top)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("BackgroundColor"))
+        
     }
 }
 
