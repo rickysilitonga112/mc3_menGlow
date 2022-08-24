@@ -28,9 +28,9 @@ struct OnboardingView: View {
         ZStack{
             
             ForEach(intros.indices.reversed(),id: \.self){index in
-                // Intro view
+           
                 IntroView(intro: intros[index])
-                    .clipShape(LiquidShape(offset: intros[index].offset,
+                    .clipShape(LiquidShape(offset: intros [index].offset,
                                            curvePoint: fakeIndex == index ? 70 : 0))
                 
                 //                    .padding(.trailing, fakeIndex == index ? 15 : 0)
@@ -38,7 +38,6 @@ struct OnboardingView: View {
             }
             
             HStack(spacing: 8){
-                //                Spacer()
                 ForEach(0..<intros.count - 2, id: \.self){index in
                     
                     Circle()
@@ -47,7 +46,7 @@ struct OnboardingView: View {
                         .scaleEffect(currentIndex == index ? 1 : 0.8)
                         .opacity(currentIndex == index ? 1 : 0.5)
                         .padding(10)
-                    //                    Spacer()
+                  
                     
                 }
                 Spacer()
@@ -55,7 +54,7 @@ struct OnboardingView: View {
                 Button{
                     
                 }label:{
-                    Text("Skip")
+                    Text(currentIndex == 2 ? "Get Started": "Skip")
                         .font(.title2)
                         .fontWeight(.medium)
                         .foregroundColor(Color("Brown"))
@@ -103,7 +102,6 @@ struct OnboardingView: View {
                                             
                                         }
                                         
-                                        // some delay to finish
                                         
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4){
                                             if fakeIndex == (intros.count - 2){
@@ -173,10 +171,6 @@ struct OnboardingView: View {
                     .font(.system(size: 17))
                     .fontWeight(.regular)
                 
-                //                    .padding(.top)
-                //                    .frame(width: CGRect().width - 10)
-                //                    .lineSpacing(8)
-                //
                 Spacer()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading,20)

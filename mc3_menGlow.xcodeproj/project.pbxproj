@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		321FC7D628B4C9D900A5794D /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321FC7D528B4C9D900A5794D /* Intro.swift */; };
+		321FC7D928B4D6A900A5794D /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321FC7D828B4D6A900A5794D /* SkinTypeView.swift */; };
+		321FC7DD28B4E0A600A5794D /* SkinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321FC7DC28B4E0A600A5794D /* SkinType.swift */; };
+		321FC7DF28B5FEC000A5794D /* SkinConcernView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321FC7DE28B5FEC000A5794D /* SkinConcernView.swift */; };
+		321FC7E128B5FF9000A5794D /* SkinConcern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321FC7E028B5FF9000A5794D /* SkinConcern.swift */; };
 		3280A93B28B28055005D8640 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4314533E28B297AB008F5085 /* ProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314533D28B297AB008F5085 /* ProgressModel.swift */; };
 		4314534028B297F3008F5085 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4314533F28B297F3008F5085 /* ProgressViewModel.swift */; };
@@ -47,6 +51,10 @@
 
 /* Begin PBXFileReference section */
 		321FC7D528B4C9D900A5794D /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
+		321FC7D828B4D6A900A5794D /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
+		321FC7DC28B4E0A600A5794D /* SkinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinType.swift; sourceTree = "<group>"; };
+		321FC7DE28B5FEC000A5794D /* SkinConcernView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConcernView.swift; sourceTree = "<group>"; };
+		321FC7E028B5FF9000A5794D /* SkinConcern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConcern.swift; sourceTree = "<group>"; };
 		4314533D28B297AB008F5085 /* ProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressModel.swift; sourceTree = "<group>"; };
 		4314533F28B297F3008F5085 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -95,6 +103,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321FC7D728B4D68900A5794D /* My Skin */ = {
+			isa = PBXGroup;
+			children = (
+				43764F6328B07B4D00517399 /* MySkinView.swift */,
+				321FC7D828B4D6A900A5794D /* SkinTypeView.swift */,
+				321FC7DE28B5FEC000A5794D /* SkinConcernView.swift */,
+			);
+			path = "My Skin";
+			sourceTree = "<group>";
+		};
 		566235F528AB57AF00EB6B3A /* Routine */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +195,8 @@
 				5688538C28ADEB3B008080B5 /* Product.swift */,
 				56B4670228B341BA00691150 /* RoutineDay.swift */,
 				321FC7D528B4C9D900A5794D /* Intro.swift */,
+				321FC7DC28B4E0A600A5794D /* SkinType.swift */,
+				321FC7E028B5FF9000A5794D /* SkinConcern.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -233,7 +253,7 @@
 				431502FA28AFD08300FE1931 /* Dashboard2.swift */,
 				431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */,
 				431502F628AF7D2400FE1931 /* ProgressView.swift */,
-				43764F6328B07B4D00517399 /* MySkinView.swift */,
+				321FC7D728B4D68900A5794D /* My Skin */,
 				566235F528AB57AF00EB6B3A /* Routine */,
 			);
 			path = screens;
@@ -325,6 +345,7 @@
 				56B4670328B341BA00691150 /* RoutineDay.swift in Sources */,
 				564CB9CD28B3EC3C0027C389 /* Date+Extension.swift in Sources */,
 				5688539428AE3385008080B5 /* ProductListView.swift in Sources */,
+				321FC7DD28B4E0A600A5794D /* SkinType.swift in Sources */,
 				566235F428AB57A300EB6B3A /* AddRoutineView.swift in Sources */,
 				566235F928AB717000EB6B3A /* PrimaryButton.swift in Sources */,
 				321FC7D628B4C9D900A5794D /* Intro.swift in Sources */,
@@ -333,7 +354,9 @@
 				563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */,
 				4314533E28B297AB008F5085 /* ProgressModel.swift in Sources */,
 				566235FC28AB755C00EB6B3A /* UIScreen+Extension.swift in Sources */,
+				321FC7E128B5FF9000A5794D /* SkinConcern.swift in Sources */,
 				5684C7C728AA5C2A00A39497 /* ContentView.swift in Sources */,
+				321FC7DF28B5FEC000A5794D /* SkinConcernView.swift in Sources */,
 				5688538928ADE3A5008080B5 /* RoutineVewModel.swift in Sources */,
 				5684C7C528AA5C2A00A39497 /* mc3_menGlowApp.swift in Sources */,
 				431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */,
@@ -345,6 +368,7 @@
 				566235F228AB576A00EB6B3A /* RoutineListView.swift in Sources */,
 				566235EE28AA9B7900EB6B3A /* Constant.swift in Sources */,
 				431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */,
+				321FC7D928B4D6A900A5794D /* SkinTypeView.swift in Sources */,
 				564CB9CB28B3961D0027C389 /* DashboardView.swift in Sources */,
 				56B4670128B27F3C00691150 /* OnboardingView.swift in Sources */,
 				43764F6228B07AC700517399 /* TabBarView.swift in Sources */,
