@@ -15,7 +15,6 @@ struct mc3_menGlowApp: App {
         WindowGroup {
 //            ContentView()
 //            OnboardingView()
-//            SkinTypeView()
             SkinConcernView()
 
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
