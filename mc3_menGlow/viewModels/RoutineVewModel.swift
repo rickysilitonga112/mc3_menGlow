@@ -47,6 +47,7 @@ class RoutineViewModel: ObservableObject {
     }
     
     
+    
     func addNewRoutine(_ newRoutine: Routine) {
         routineList.append(newRoutine)
     }
