@@ -17,90 +17,93 @@ struct RoutineListView: View {
     
     var body: some View {
         
-        VStack {
-            Image("header_allpage")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
-            HStack {
-                Text("Routine List")
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
-                Spacer()
+        NavigationView {
+            VStack {
+                Image("header_allpage")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
                 
-                NavigationLink(destination: CustomRoutine(routineVM: routineVM), tag: "custom", selection: $session) {
-                    Button {
-                        session = "custom"
-                    } label: {
-                        Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 40)
-                            .foregroundColor(kSecondaryColor)
+                HStack {
+                    Text("Routine List")
+                        .fontWeight(.bold)
+                        .font(.largeTitle)
+                    Spacer()
+                    
+                    NavigationLink(destination: CustomRoutine(routineVM: routineVM), tag: "custom", selection: $session) {
+                        Button {
+                            session = "custom"
+                        } label: {
+                            Image(systemName: "plus.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40)
+                                .foregroundColor(kSecondaryColor)
+                        }
+                        
                     }
                     
                 }
+                .padding(.horizontal)
                 
-            }
-            .padding(.horizontal)
-            
-            // card
-            ScrollView {
-                LazyVStack {
-                    ForEach($routineVM.routineList) { $routine in
-                        ZStack {
-                            Image("\(routine.image)")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .cornerRadius(8)
-                            
-                            VStack(alignment: .leading) {
-                                Toggle(isOn: $routine.isEnable) {
-                                    Text("\(routine.title)")
-                                        .font(.title2)
-                                        .fontWeight(.bold)
-                                        .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
-                                }
+                // card
+                ScrollView {
+                    LazyVStack {
+                        ForEach($routineVM.routineList) { $routine in
+                            ZStack {
+                                Image("\(routine.image)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(8)
                                 
-                                NavigationLink(destination: AddRoutineView(routineVM: routineVM, routine: $routine)) {
-                                    VStack {
-                                        HStack {
-                                            VStack(alignment: .leading) {
-                                                Text("Notification:")
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
-                                                Text("\(routine.time.getFormattedDate(format: "HH:mm a"))")
-                                                    .fontWeight(.semibold)
-                                                    .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                VStack(alignment: .leading) {
+                                    Toggle(isOn: $routine.isEnable) {
+                                        Text("\(routine.title)")
+                                            .font(.title2)
+                                            .fontWeight(.bold)
+                                            .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                    }
+                                    
+                                    NavigationLink(destination: AddRoutineView(routineVM: routineVM, routine: $routine)) {
+                                        VStack {
+                                            HStack {
+                                                VStack(alignment: .leading) {
+                                                    Text("Notification:")
+                                                        .fontWeight(.semibold)
+                                                        .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                                    Text("\(routine.time.getFormattedDate(format: "HH:mm a"))")
+                                                        .fontWeight(.semibold)
+                                                        .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                                }
+                                                Spacer()
                                             }
                                             Spacer()
-                                        }
-                                        Spacer()
-                                        HStack {
-                                            TagViewPlacement(items: routineVM.getTagViewItem(routine: routine))
-                                            Spacer()
+                                            HStack {
+                                                TagViewPlacement(items: routineVM.getTagViewItem(routine: routine))
+                                                Spacer()
+                                            }
                                         }
                                     }
+                                    
                                 }
+                                .padding(.horizontal)
+                                .padding(.top)
                                 
                             }
-                            .padding(.horizontal)
-                            .padding(.top)
-                            
+                            .frame(width: 350, height: 180, alignment: .topLeading)
+                            .padding(.bottom)
+                            .opacity(routine.isEnable ? 1 : 0.6)
                         }
-                        .frame(width: 350, height: 180, alignment: .topLeading)
-                        .padding(.bottom)
-                        .opacity(routine.isEnable ? 1 : 0.6)
                     }
                 }
+                
+                Spacer()
             }
-            
-            Spacer()
-        }
-        .ignoresSafeArea(edges: .top)
-        .frame(alignment: .top)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea(edges: .top)
+            .frame(alignment: .top)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
+        .navigationBarTitleDisplayMode(.inline)
+        }
         
     }
 }
