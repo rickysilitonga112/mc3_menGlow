@@ -12,17 +12,18 @@ struct DashboardView: View {
     private let screenHeight = UIScreen.main.bounds.height
     @State var isCheck: Bool = false
     @StateObject var routineVM = RoutineViewModel.shared
+   
     
     var body: some View {
-//        ScrollView(.horizontal, showsIndicators: false) {
-//        TabView {
+        TabView {
             ForEach($routineVM.routineList) { $routine in
             VStack {
                 ZStack {
                     Image(routineVM.getDashboardRoutineImage(title: routine.title))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: screenWidth)
+                        .clipped()
+                        .edgesIgnoringSafeArea([.top, .horizontal])
                     
                     HStack {
                         Spacer()
@@ -40,7 +41,7 @@ struct DashboardView: View {
                             Text("21 Days Routine Badges")
                                 .font(.caption)
                         }
-                    } .padding(.horizontal)
+                    } .padding()
                         .foregroundColor(routine.title == "Morning Routine" ? .black : .white)
                 }
                 
@@ -64,7 +65,7 @@ struct DashboardView: View {
                         Image(systemName: "circle.grid.3x3.circle.fill")
                             .resizable()
                             .frame(width: 40, height: 40)
-                            .foregroundColor(routine.title == "Custom Routine" ? Color("Brown") : Color("DisableColor"))
+                            .foregroundColor(routine.title == "Morning Routine" ? Color("DisableColor") : Color("Brown"))
                     }
                     
                     Text("- - - -")
@@ -77,7 +78,7 @@ struct DashboardView: View {
                         Image(systemName: "moon.circle.fill")
                             .resizable()
                             .frame(width: 40, height: 40)
-                            .foregroundColor(routine.title == "Night Routine" ? Color("Brown") : Color("DisableColor"))
+                            .foregroundColor(routine.title == "Morning Routine" ? Color("DisableColor") : Color("Brown"))
                     }
                 }
                 
@@ -113,6 +114,7 @@ struct DashboardView: View {
                         
                         .onTapGesture {
                             isCheck.toggle()
+                            routineVM.checkMorningRoutine()
                         }
                 }
                 .padding(.horizontal)
@@ -120,7 +122,8 @@ struct DashboardView: View {
                 ScrollView(showsIndicators: false){
                     ProductCard(routine: $routineVM.routineList[0])
                 }
-                .frame(height: 310)
+              
+//                .frame(height: screenHeight*0.4)
                 
                 PrimaryButton(title: "Done") {
                     // complete task
@@ -128,15 +131,11 @@ struct DashboardView: View {
                 
                 Spacer()
             }
-            .ignoresSafeArea()
-            .frame(alignment: .top)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
             }
-//        }
-//        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-//        }
-//        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+        .edgesIgnoringSafeArea(.top)
     }
 }
 

@@ -10,5 +10,6 @@ import SwiftUI
 
 struct ProgressModel: Identifiable {
     var id = UUID().uuidString
+    
     var taskDate: Date
 }

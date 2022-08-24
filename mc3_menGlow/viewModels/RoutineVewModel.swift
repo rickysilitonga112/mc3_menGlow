@@ -38,10 +38,28 @@ class RoutineViewModel: ObservableObject {
     // nyimpan history
     @Published var record: [Record] = []
     
+    var totalProgress: Int {
+        routineList.map { $0.products.filter { $0.isUsed }.count }.reduce(0, +)
+    }
+    
+    var totalProduct: Int {
+        routineList.map { $0.products.count }.reduce(0, +)
+    }
+    
+    var percentageProgress: Double {
+        Double(totalProgress) / Double(totalProduct)
+    }
+    
     
     func addNewRoutine(_ newRoutine: Routine) {
         routineList.append(newRoutine)
     }
+    
+    func checkMorningRoutine() {
+        for i in 0..<routineList[0].products.count {
+            routineList[0].products[i].isUsed.toggle()
+        }
+     }
 
     func getDashboardRoutineImage(title: String) -> String {
         if title == "Morning Routine" {

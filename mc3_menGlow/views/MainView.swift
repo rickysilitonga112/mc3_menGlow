@@ -15,7 +15,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             TabView {
                 DashboardView()
                     .tabItem {
@@ -42,12 +42,12 @@ struct MainView: View {
                         Image(systemName: "person.text.rectangle.fill")
                         Text("My Skin")
                     }
-                
+                    .navigationBarTitleDisplayMode(.inline)
             }
             .accentColor(.white)
             
-        }
-        .navigationViewStyle(.stack)
+        
+        
         
     }
 }
