@@ -47,6 +47,7 @@ struct MainView: View {
             .accentColor(.white)
             
         }
+        .navigationViewStyle(.stack)
         
     }
 }

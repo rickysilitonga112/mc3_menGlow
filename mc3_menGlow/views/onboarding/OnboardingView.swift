@@ -26,7 +26,7 @@ struct OnboardingView: View {
     @GestureState var isDragging: Bool = false
     @State var fakeIndex: Int = 0
     @State var currentIndex: Int = 0
-    @State var isTimeToDashboard: Bool = false
+    @State var goToDashboard: Bool = false
     
     var body: some View{
         NavigationView {
@@ -56,9 +56,9 @@ struct OnboardingView: View {
                             showOnboarding = false
                             session = "gotoMain"
                         }label:{
-                            Text(isTimeToDashboard ? "Start Journey" : "Skip")
+                            Text(goToDashboard ? "Start Journey" : "Skip")
                                 .font(.title2)
-                                .fontWeight(isTimeToDashboard ? .semibold : .medium)
+                                .fontWeight(goToDashboard ? .semibold : .medium)
                                 .foregroundColor(Color("Brown"))
                     }
                     }
@@ -103,8 +103,8 @@ struct OnboardingView: View {
                                                 
                                                 currentIndex = 0
                                                 
-                                                if isTimeToDashboard == false {
-                                                    isTimeToDashboard = true
+                                                if goToDashboard == false {
+                                                    goToDashboard = true
                                                 }
                                             }
                                             else{
@@ -153,6 +153,7 @@ struct OnboardingView: View {
                 fakeIndex = 1
         }
         }
+        .navigationViewStyle(.stack)
     }
     
     @ViewBuilder

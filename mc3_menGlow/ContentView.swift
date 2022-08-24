@@ -16,7 +16,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
-    @AppStorage("showOnboarding") var showOnboarding: Bool = true
+    @AppStorage("showOnboarding") var showOnboarding: Bool = false
     
     var body: some View {
         if showOnboarding {
