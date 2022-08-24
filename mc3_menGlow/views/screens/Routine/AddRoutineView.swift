@@ -16,14 +16,21 @@ struct AddRoutineView: View {
     @State var newProducts = [Product]()
     @State var newTime: Date = Date.now
     
+    var dateClosedRange: ClosedRange<Date> {
+        let min = Calendar.current.startOfDay(for: Date())
+        let max = Calendar.current.date(byAdding: .hour, value: 12, to: min)!
+        return min...max
+    }
     var body: some View {
         VStack(spacing: 30) {
             HStack {
                 Text("Time for routine")
                     .fontWeight(.semibold)
                 Spacer()
-                DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
+                DatePicker("", selection: $newTime, in: dateClosedRange, displayedComponents: .hourAndMinute)
                     .labelsHidden()
+//                DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
+//                    .labelsHidden()
             }
             
             HStack {
@@ -90,6 +97,6 @@ struct AddRoutineView: View {
 
 struct AddRoutineView_Previews: PreviewProvider {
     static var previews: some View {
-        AddRoutineView(routineVM: RoutineViewModel(), routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [], image2: "")))
+        AddRoutineView(routineVM: RoutineViewModel(), routine: .constant(Routine(title: "", image: "", time: Date.now, isEnable: false, products: [])))
     }
 }

@@ -14,16 +14,17 @@ struct Product: Identifiable {
     var isCheck: Bool
     var productName: String
     var icon: String
+    var isUsed: Bool
 
     static func getProduct() -> [Product] {
         let products = [
-            Product(title: "Cleanser", isCheck: true, productName: "", icon: "cleanser_icon"),
-            Product(title: "Moisturizer", isCheck: false, productName: "", icon: "moisturizer_icon"),
-            Product(title: "Sunscreen", isCheck: false, productName: "", icon: "sunscreen_icon"),
-            Product(title: "Toner", isCheck: false, productName: "", icon: "toner_icon"),
-            Product(title: "Serum", isCheck: false, productName: "", icon: "serum_icon"),
-            Product(title: "Night Cream", isCheck: false, productName: "", icon: "moisturizer_icon"),
-            Product(title: "Mask", isCheck: false, productName: "", icon: "moisturizer_icon")
+            Product(title: "Cleanser", isCheck: false, productName: "", icon: "cleanser_icon", isUsed: false),
+            Product(title: "Moisturizer", isCheck: false, productName: "", icon: "moisturizer_icon", isUsed: false),
+            Product(title: "Sunscreen", isCheck: false, productName: "", icon: "sunscreen_icon", isUsed: false),
+            Product(title: "Toner", isCheck: false, productName: "", icon: "toner_icon", isUsed: false),
+            Product(title: "Serum", isCheck: false, productName: "", icon: "serum_icon", isUsed: false),
+            Product(title: "Night Cream", isCheck: false, productName: "", icon: "moisturizer_icon", isUsed: false),
+            Product(title: "Mask", isCheck: false, productName: "", icon: "moisturizer_icon", isUsed: false)
         ]
         
         return products

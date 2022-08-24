@@ -11,6 +11,8 @@ import UICircularProgressRing
 struct ProgressView: View {
     
     @StateObject var progressVM = ProgressViewModel.shared
+    @StateObject var routineVM = RoutineViewModel.shared
+    
     @Namespace var animation
     @State var progress = RingProgress.percent(0.5)
     
@@ -64,11 +66,9 @@ struct ProgressView: View {
                 }
                 .padding(.horizontal)
             }
-//            Spacer()
-//                .frame(height: 26)
             GoalProgressRing(
                 ringColor: Color("RingColor"),
-                progressValue: .constant(0.5)
+                progressValue: .constant(routineVM.percentageProgress)
             )
             .frame(maxHeight: 188, alignment: .top)
             HStack{
@@ -112,8 +112,6 @@ struct ProgressView: View {
                         .foregroundColor(Color("Brown"))
                 }
             }
-//            Spacer()
-//                .frame(height: 26)
             Text("Streaks")
                 .font(.system(size: 17))
                 .fontWeight(.semibold)
@@ -162,7 +160,11 @@ struct ProgressView: View {
             }
             
             
-        }}
+        }
+            
+            Spacer()
+            
+        }
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
