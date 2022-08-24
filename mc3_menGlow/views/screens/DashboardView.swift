@@ -24,8 +24,8 @@ struct DashboardView: View {
                         Image(routineVM.getDashboardRoutineImage(title: routine.title))
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .edgesIgnoringSafeArea([.top, .horizontal])
+//                            .clipped()
+//                            .edgesIgnoringSafeArea([.top, .horizontal])
                         
                         HStack {
                             Spacer()
@@ -116,6 +116,7 @@ struct DashboardView: View {
                     Spacer()
                 }
                 .background(Color("BackgroundColor"))
+                .ignoresSafeArea()
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

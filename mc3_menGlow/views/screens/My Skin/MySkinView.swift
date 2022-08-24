@@ -13,55 +13,131 @@ struct MySkinView: View {
         
         NavigationView{
             
-            VStack{
+            VStack(spacing: 0){
                 Image("header_allpage")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding(.bottom)
-                
-                HStack{
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .fill(.white)
-                            .frame(width: 130, height: 80 )
-                            .shadow(radius: 1)
-                        
-                        VStack(alignment:. leading){
-                            Text ("Skin Type")
+                VStack{
+                Text("My Skin")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10, style: .circular)
+                        .fill(.white)
+                        .frame(height: 69)
+                        .shadow(radius: 2)
+                        .padding(.horizontal, 20)
+                    HStack {
+                        VStack(alignment: .leading){
+                            Text("SKIN TYPE")
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                            Text("Normal")
                                 .font(.body)
                                 .fontWeight(.semibold)
                             
-                            Text("Normal")
-                                .font(.caption)
-                        }
-                        .frame(height: 80)
-                    }
-                    Spacer()
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10, style: .circular)
-                            .fill(.white)
-                            .frame(width: 130, height: 80 )
-                            .shadow(radius: 1)
-                        
-                        VStack(alignment:. leading){
-                            Text ("Skin Type")
-                                .font(.body)
-                                .fontWeight(.semibold)
                             
-                            Text("Normal")
-                                .font(.caption)
                         }
-                        .frame(height: 80)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 40)
+                        Text("Edit")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 40)
                     }
-                    .padding(.horizontal)
-
+                    
                 }
-              
+                .padding(.bottom)
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10, style: .circular)
+                        .fill(.white)
+                        .frame(height: 69)
+                        .shadow(radius: 2)
+                        .padding(.horizontal, 20)
+                    HStack {
+                        VStack(alignment: .leading){
+                            Text("SKIN CONCERN")
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                            Text("Acne, Dark Circles")
+                                .font(.body)
+                                .fontWeight(.semibold)
+                            
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 40)
+                        Text("Edit")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .padding(.horizontal, 40)
+                        
+                    }
+                    
+                }
+                .padding(.bottom)
+                HStack {
+                    Text("Tips for you")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .padding(.horizontal, 30)
+                    Spacer()
+                    Text("See more")
+                        .font(.footnote)
+                        .foregroundColor(Color("Brown"))
+                        .padding(.horizontal, 25)
+                    
+                }
+                HStack {
+                    Text("How to Remove Sunspots on Your Face"
+                        )
+                    .padding(.horizontal)
+                    .frame(height: 100)
+                    Spacer()
+                    Image("Image1")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                }
+                .padding()
+                HStack {
+                    Text("Skincare tips for Oily and Acne Prone Skin")
+                        .padding(.horizontal)
+                        .frame(height: 100)
+                    Spacer()
+                    Image("Image2")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(10)
+                        .shadow(radius: 2)
+                }
+                .padding()
+                }
+                Spacer()
+//                HStack {
+//                    Text("Natural Relief for Razor Burn 8 Do's and Don'ts")
+//                        .padding(.horizontal)
+//                    Spacer()
+//                    Image("Image3")
+//                        .resizable()
+//                        .frame(width: 100, height: 100)
+//                        .cornerRadius(10)
+//                        .shadow(radius: 2)
+//                }
+//                .padding()
+//                Spacer()
+                
+                
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color("BackgroundColor"))
             .ignoresSafeArea(edges: .top)
-            .navigationTitle("My Skin")
-            .navigationBarTitleDisplayMode(.large)
+//            .navigationTitle("My Skin")
+//            .navigationBarTitleDisplayMode(.large)
             .frame(alignment: .top)
         }
     }
