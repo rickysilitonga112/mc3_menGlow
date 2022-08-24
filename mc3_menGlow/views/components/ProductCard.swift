@@ -31,7 +31,7 @@ struct ProductCard: View {
                             Spacer()
                             
                             VStack(alignment:. leading){
-                                Text("Garnier Men Acno Fight Anti Acne")
+                                Text("\(product.productName == "" ? "No Product Name" : product.productName)")
                                     .font(.body)
                                     .fontWeight(.semibold)
                                 

@@ -13,7 +13,7 @@ struct RoutineListView: View {
     @StateObject var routineVM = RoutineViewModel.shared
     @State var session: String? = nil
     @State var showAddRoutine: Bool = false
-    
+    @State private var showingAlert = false
     
     var body: some View {
         
@@ -31,15 +31,21 @@ struct RoutineListView: View {
                     
                     NavigationLink(destination: CustomRoutine(routineVM: routineVM), tag: "custom", selection: $session) {
                         Button {
-                            session = "custom"
+                            if routineVM.routineList.count < 3 {
+                                session = "custom"
+                            } else {
+                                showingAlert.toggle()
+                            }
                         } label: {
                             Image(systemName: "plus.circle.fill")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 40)
-                                .foregroundColor(kSecondaryColor)
+                                .foregroundColor(routineVM.routineList.count < 3 ? kSecondaryColor : .secondary)
                         }
-                        
+                        .alert("You can only add one custom routine!", isPresented: $showingAlert) {
+                            Button("OK", role: .cancel) { }
+                        }
                     }
                     
                 }
@@ -101,8 +107,8 @@ struct RoutineListView: View {
             .ignoresSafeArea(edges: .top)
             .frame(alignment: .top)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BackgroundColor"))
-        .navigationBarTitleDisplayMode(.inline)
+            .background(Color("BackgroundColor"))
+            .navigationBarTitleDisplayMode(.inline)
         }
         
     }

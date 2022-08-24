@@ -10,7 +10,7 @@ import Foundation
 struct RoutineDay: Identifiable {
     var id = UUID()
     var day: String
-    var isChoose: Bool = true
+    var isChoose: Bool = false
     
     
     static func getRoutineDays() -> [RoutineDay] {

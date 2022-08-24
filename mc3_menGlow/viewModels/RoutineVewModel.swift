@@ -13,6 +13,8 @@ import SwiftUI
 class RoutineViewModel: ObservableObject {
     static let shared = RoutineViewModel()
     
+    @Published var indexShow: Int = 0
+    @Published var showEmptyState: Bool = false
     
     @Published var routineList: [Routine] = [
         Routine(
@@ -21,12 +23,6 @@ class RoutineViewModel: ObservableObject {
             time: Date.now,
             isEnable: false,
             products: Product.getProduct()),
-//        Routine(
-//            title: "Custom Routine",
-//            image: "routinelist_evening",
-//            time: Date.now,
-//            isEnable: false,
-//            products: Product.getProduct()),
         Routine(
             title: "Night Routine",
             image: "routinelist_evening",
@@ -60,6 +56,37 @@ class RoutineViewModel: ObservableObject {
             routineList[0].products[i].isUsed.toggle()
         }
      }
+    
+    func checkRoutineEnable() -> Bool {
+        for i in 0 ... routineList.count - 1 {
+            if routineList[i].isEnable {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func checkRoutineProductEnable() -> Bool {
+        for i in 0 ... routineList.count - 1 {
+            for j in 0 ... routineList[i].products.count - 1 {
+                if routineList[i].products[j].isCheck {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
+    func getRoutineIndex(id: UUID) -> Int {
+        var index: Int = 0
+        
+        for i in 0 ... routineList.count - 1 {
+            if routineList[i].id == id {
+                index = i
+            }
+        }
+        return index
+    }
 
     func getDashboardRoutineImage(title: String) -> String {
         if title == "Morning Routine" {

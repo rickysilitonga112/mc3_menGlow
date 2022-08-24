@@ -21,6 +21,7 @@ struct AddRoutineView: View {
         let max = Calendar.current.date(byAdding: .hour, value: 12, to: min)!
         return min...max
     }
+    
     var body: some View {
         VStack(spacing: 30) {
             HStack {
@@ -29,8 +30,6 @@ struct AddRoutineView: View {
                 Spacer()
                 DatePicker("", selection: $newTime, in: dateClosedRange, displayedComponents: .hourAndMinute)
                     .labelsHidden()
-//                DatePicker("", selection: $newTime, displayedComponents: .hourAndMinute)
-//                    .labelsHidden()
             }
             
             HStack {
@@ -64,9 +63,8 @@ struct AddRoutineView: View {
                 }
             }
             
-            
-            
             Spacer()
+            
             HStack {
                 Spacer()
                 PrimaryButton(title: "Save") {
@@ -75,7 +73,6 @@ struct AddRoutineView: View {
                     routine.time = newTime
                     print("\(routine.time)")
                     self.presentationMode.wrappedValue.dismiss()
-                    
                 }
                 Spacer()
             }

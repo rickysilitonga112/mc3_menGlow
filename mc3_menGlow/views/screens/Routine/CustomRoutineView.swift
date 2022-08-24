@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomRoutine: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var routineVM: RoutineViewModel
-    @State var newRoutine = Routine(title: "Custom Routine", image: "", time: Date.now, isEnable: true, products: [])
+    @State var newRoutine = Routine(title: "", image: "", time: Date.now, isEnable: true, products: [])
     @State var presentSheet: Bool = false
     @State var routineDays = [RoutineDay]()
     
@@ -93,26 +93,26 @@ struct CustomRoutine: View {
                             }
                         }
                     }
+                    
+                    AddProductButton(title: "Add New Product") {
+                        presentSheet.toggle()
+                    } .padding(.top)
                 }
-            }
-            .padding(.horizontal)
-            
-            AddProductButton(title: "Add New Product") {
-                presentSheet.toggle()
             }
             .padding(.horizontal)
             
             Spacer()
             
-            
             PrimaryButton(title: "Save") {
-                newRoutine.dayRepeat = routineDays
-                routineVM.addNewRoutine(newRoutine)
-                self.presentationMode.wrappedValue.dismiss()
+                if newRoutine.title.count > 4 {
+                    newRoutine.dayRepeat = routineDays
+                    routineVM.addNewRoutine(newRoutine)
+                    self.presentationMode.wrappedValue.dismiss()
+                } else {
+                    
+                }
             }
-            
-            
-            
+            .padding(.bottom)
         }
         .sheet(isPresented: $presentSheet) {
             ProductListView(products: $newRoutine.products, presentSheet: $presentSheet)

@@ -14,41 +14,49 @@ struct MainView: View {
         UITabBar.appearance().unselectedItemTintColor = UIColor(red: 152/255, green: 154/255, blue: 148/255, alpha: 1)
     }
     
+    @StateObject var routineVM = RoutineViewModel.shared
+    
     var body: some View {
-//        NavigationView {
-            TabView {
+        
+        TabView {
+            if routineVM.checkRoutineProductEnable() {
                 DashboardView()
                     .tabItem {
                         Image(systemName: "checklist")
                         Text("Activity")
                     }
-                
-                RoutineListView()
-                    .tabItem {
-                        
-                        Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-                        Text("Routine")
-                    }
-                
-                ProgressView()
-                    .tabItem{
-                        Image(systemName: "chart.bar.fill")
-                        Text("Progress")
-                        
-                    }
-                
-                MySkinView()
-                    .tabItem{
-                        Image(systemName: "person.text.rectangle.fill")
-                        Text("My Skin")
-                    }
-                    .navigationBarTitleDisplayMode(.inline)
             }
-            .accentColor(.white)
+            else {
+                EmptyStateView()
+                    .tabItem {
+                        Image(systemName: "checklist")
+                        Text("Activity")
+                    }
+            }
             
-        
-        
-        
+            
+            RoutineListView()
+                .tabItem {
+                    
+                    Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                    Text("Routine")
+                }
+            
+            ProgressView()
+                .tabItem{
+                    Image(systemName: "chart.bar.fill")
+                    Text("Progress")
+                    
+                }
+            
+            MySkinView()
+                .tabItem{
+                    Image(systemName: "person.text.rectangle.fill")
+                    Text("My Skin")
+                }
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        .accentColor(.white)
     }
 }
 
