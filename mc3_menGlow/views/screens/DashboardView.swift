@@ -24,7 +24,7 @@ struct DashboardView: View {
                         Image(routineVM.getDashboardRoutineImage(title: routine.title))
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .clipped()
+//                            .clipped()
 //                            .edgesIgnoringSafeArea([.top, .horizontal])
                         
                         HStack {

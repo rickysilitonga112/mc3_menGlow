@@ -29,6 +29,12 @@ class RoutineViewModel: ObservableObject {
             time: Date.now,
             isEnable: false,
             products: Product.getProduct())
+//        Routine(
+//            title: "Custom Routine",
+//            image: "customroutinecard",
+//            time: Date.now,
+//            isEnable: false,
+//            products: Product.getProduct())
     ]
     
     // nyimpan history

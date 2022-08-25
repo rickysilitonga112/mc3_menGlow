@@ -15,8 +15,10 @@ struct ProgressView: View {
     
     @Namespace var animation
     @State var progress = RingProgress.percent(0.5)
+    @State var session: String? = nil
     
     var body: some View {
+        NavigationView{
         VStack(spacing: 0){
             Image("header_allpage")
                 .resizable()
@@ -106,10 +108,16 @@ struct ProgressView: View {
                     Text("3/7 days")
                         .font(.system(size: 17))
                         .fontWeight(.semibold)
+                    NavigationLink(destination: GoalView(), tag: "goal", selection: $session) {
+                    Button {
+                        session = "goal"
+                    } label: {
                     Image(systemName: "chevron.right")
                         .resizable()
                         .frame(width: 10, height: 18)
                         .foregroundColor(Color("Brown"))
+                    }
+                    }
                 }
             }
             Text("Streaks")
@@ -168,6 +176,8 @@ struct ProgressView: View {
         .ignoresSafeArea()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BackgroundColor"))
+        .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 

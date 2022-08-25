@@ -18,6 +18,9 @@
 		431502EF28AF3A8D00FE1931 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */; };
 		431502F528AF5AF400FE1931 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F428AF5AF400FE1931 /* ProductCard.swift */; };
 		431502F728AF7D2400FE1931 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431502F628AF7D2400FE1931 /* ProgressView.swift */; };
+		4367D57628B6AC1900F16E19 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4367D57528B6AC1900F16E19 /* Algorithms */; };
+		4367D57928B6AC2800F16E19 /* UICircularProgressRing in Frameworks */ = {isa = PBXBuildFile; productRef = 4367D57828B6AC2800F16E19 /* UICircularProgressRing */; };
+		4367D57B28B6C61500F16E19 /* GoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4367D57A28B6C61500F16E19 /* GoalView.swift */; };
 		43764F6428B07B4D00517399 /* MySkinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43764F6328B07B4D00517399 /* MySkinView.swift */; };
 		43FC3F0D28B4BADC00501868 /* NewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC3F0C28B4BADC00501868 /* NewView.swift */; };
 		563DFCC128B20E9D00AD3175 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563DFCC028B20E9D00AD3175 /* TagView.swift */; };
@@ -55,6 +58,7 @@
 		431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		431502F428AF5AF400FE1931 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		431502F628AF7D2400FE1931 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		4367D57A28B6C61500F16E19 /* GoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalView.swift; sourceTree = "<group>"; };
 		43764F6328B07B4D00517399 /* MySkinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySkinView.swift; sourceTree = "<group>"; };
 		43FC3F0C28B4BADC00501868 /* NewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewView.swift; sourceTree = "<group>"; };
 		563DFCC028B20E9D00AD3175 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
@@ -89,7 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4367D57628B6AC1900F16E19 /* Algorithms in Frameworks */,
 				4314534628B298CB008F5085 /* UICircularProgressRing in Frameworks */,
+				4367D57928B6AC2800F16E19 /* UICircularProgressRing in Frameworks */,
 				4314534328B298B5008F5085 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +249,7 @@
 				564CB9CA28B3961D0027C389 /* DashboardView.swift */,
 				431502EE28AF3A8D00FE1931 /* EmptyStateView.swift */,
 				431502F628AF7D2400FE1931 /* ProgressView.swift */,
+				4367D57A28B6C61500F16E19 /* GoalView.swift */,
 				321FC7D728B4D68900A5794D /* My Skin */,
 				566235F528AB57AF00EB6B3A /* Routine */,
 				43FC3F0C28B4BADC00501868 /* NewView.swift */,
@@ -269,6 +276,8 @@
 			packageProductDependencies = (
 				4314534228B298B5008F5085 /* Algorithms */,
 				4314534528B298CB008F5085 /* UICircularProgressRing */,
+				4367D57528B6AC1900F16E19 /* Algorithms */,
+				4367D57828B6AC2800F16E19 /* UICircularProgressRing */,
 			);
 			productName = mc3_menGlow;
 			productReference = 5684C7C128AA5C2A00A39497 /* GoGlow.app */;
@@ -301,6 +310,8 @@
 			packageReferences = (
 				4314534128B298B5008F5085 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				4314534428B298CA008F5085 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */,
+				4367D57428B6AC1900F16E19 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				4367D57728B6AC2800F16E19 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */,
 			);
 			productRefGroup = 5684C7C228AA5C2A00A39497 /* Products */;
 			projectDirPath = "";
@@ -329,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3280A93B28B28055005D8640 /* (null) in Sources */,
+				4367D57B28B6C61500F16E19 /* GoalView.swift in Sources */,
 				5684C7CE28AA5C2B00A39497 /* Persistence.swift in Sources */,
 				56EDB0C028B391D200E6BBF0 /* MainView.swift in Sources */,
 				5688538B28ADEA8D008080B5 /* Routine.swift in Sources */,
@@ -581,6 +593,22 @@
 				kind = branch;
 			};
 		};
+		4367D57428B6AC1900F16E19 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		4367D57728B6AC2800F16E19 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/luispadron/UICircularProgressRing";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -590,6 +618,16 @@
 			productName = Algorithms;
 		};
 		4314534528B298CB008F5085 /* UICircularProgressRing */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4314534428B298CA008F5085 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */;
+			productName = UICircularProgressRing;
+		};
+		4367D57528B6AC1900F16E19 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4314534128B298B5008F5085 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		4367D57828B6AC2800F16E19 /* UICircularProgressRing */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4314534428B298CA008F5085 /* XCRemoteSwiftPackageReference "UICircularProgressRing" */;
 			productName = UICircularProgressRing;
