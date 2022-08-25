@@ -66,7 +66,7 @@ struct RoutineListView: View {
                                         Text("\(routine.title)")
                                             .font(.title2)
                                             .fontWeight(.bold)
-                                            .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                            .foregroundColor((routine.image == "routinelist_morning") ? .black : .white)
                                     }
                                     
                                     NavigationLink(destination: AddRoutineView(routineVM: routineVM, routine: $routine)) {
@@ -75,10 +75,10 @@ struct RoutineListView: View {
                                                 VStack(alignment: .leading) {
                                                     Text("Notification:")
                                                         .fontWeight(.semibold)
-                                                        .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                                        .foregroundColor((routine.image == "routinelist_morning") ? .black : .white)
                                                     Text("\(routine.time.getFormattedDate(format: "HH:mm a"))")
                                                         .fontWeight(.semibold)
-                                                        .foregroundColor((routine.image == "routinelist_evening") ? .white : .black)
+                                                        .foregroundColor((routine.image == "routinelist_morning") ? .black : .white)
                                                 }
                                                 Spacer()
                                             }

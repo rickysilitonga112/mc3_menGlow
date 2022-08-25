@@ -44,6 +44,7 @@ struct AddRoutineView: View {
                         VStack {
                             HStack {
                                 Text(product.title)
+                                    .padding(.bottom)
                                 Spacer()
                                 Button {
                                     product.isCheck.toggle()

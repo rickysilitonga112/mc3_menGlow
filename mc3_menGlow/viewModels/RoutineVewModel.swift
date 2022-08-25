@@ -46,8 +46,6 @@ class RoutineViewModel: ObservableObject {
         Double(totalProgress) / Double(totalProduct)
     }
     
-    
-    
     func addNewRoutine(_ newRoutine: Routine) {
         routineList.append(newRoutine)
     }
@@ -95,7 +93,7 @@ class RoutineViewModel: ObservableObject {
         } else if title == "Night Routine" {
             return "header_nightmoonwhite"
         } else {
-            return ""
+            return "customheader"
         }
     }
     

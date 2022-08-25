@@ -27,8 +27,7 @@ struct ProductCard: View {
                             Image("\(product.icon)")
                                 .resizable()
                                 .frame(width: 50, height: 50)
-                            
-                            Spacer()
+                                .padding(.trailing)
                             
                             VStack(alignment:. leading){
                                 Text("\(product.productName == "" ? "No Product Name" : product.productName)")

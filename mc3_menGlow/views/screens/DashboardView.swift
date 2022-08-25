@@ -25,7 +25,7 @@ struct DashboardView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .clipped()
-                            .edgesIgnoringSafeArea([.top, .horizontal])
+//                            .edgesIgnoringSafeArea([.top, .horizontal])
                         
                         HStack {
                             Spacer()
@@ -44,7 +44,7 @@ struct DashboardView: View {
                                     .font(.caption)
                             }
                         }
-                        .padding()
+                        .padding(.horizontal)
                         .foregroundColor(routine.title == "Morning Routine" ? .black : .white)
                     }
                     
@@ -116,6 +116,7 @@ struct DashboardView: View {
                     Spacer()
                 }
                 .background(Color("BackgroundColor"))
+                .ignoresSafeArea(edges: .top)
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

@@ -12,7 +12,6 @@ struct MySkinView: View {
     var body: some View {
         
         NavigationView{
-            
             VStack{
                 Image("header_allpage")
                     .resizable()
