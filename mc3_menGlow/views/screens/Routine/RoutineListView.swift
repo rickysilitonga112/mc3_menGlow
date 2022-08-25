@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct RoutineListView: View {
     private let screenWidth = UIScreen.screenWidth
@@ -16,7 +17,6 @@ struct RoutineListView: View {
     @State private var showingAlert = false
     
     var body: some View {
-        
         NavigationView {
             VStack {
                 Image("header_allpage")
@@ -110,6 +110,7 @@ struct RoutineListView: View {
             .background(Color("BackgroundColor"))
             .navigationBarTitleDisplayMode(.inline)
         }
+
         
     }
 }

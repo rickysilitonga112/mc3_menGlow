@@ -13,11 +13,13 @@ struct CustomRoutine: View {
     @State var newRoutine = Routine(title: "", image: "customroutinecard", time: Date.now, isEnable: true, products: [])
     @State var presentSheet: Bool = false
     @State var routineDays = [RoutineDay]()
+    @State private var showingAlert = false
     
     var body: some View {
         VStack(spacing: 30) {
             // textfield
             TextField("Routine Name", text: $newRoutine.title)
+                .disableAutocorrection(true)
                 .padding(.horizontal)
                 .overlay(
                     RoundedRectangle(cornerRadius: 14)
@@ -79,6 +81,7 @@ struct CustomRoutine: View {
                             VStack {
                                 HStack {
                                     Text(product.title)
+                                        .font(.subheadline)
                                     Spacer()
                                     Button {
                                         product.isCheck.toggle()
@@ -90,7 +93,10 @@ struct CustomRoutine: View {
                                 }
                                 
                                 TextField("Product Name", text: $product.productName)
+                                    .font(.title3)
+                                    .disableAutocorrection(true)
                             }
+                            .padding(.bottom)
                         }
                     }
                     
@@ -109,8 +115,11 @@ struct CustomRoutine: View {
                     routineVM.addNewRoutine(newRoutine)
                     self.presentationMode.wrappedValue.dismiss()
                 } else {
-                    
+                    showingAlert.toggle()
                 }
+            }
+            .alert("You should input routine title minimal 5 character!", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
             }
             .padding(.bottom)
         }

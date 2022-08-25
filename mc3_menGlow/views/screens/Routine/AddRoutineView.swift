@@ -44,7 +44,8 @@ struct AddRoutineView: View {
                         VStack {
                             HStack {
                                 Text(product.title)
-                                    .padding(.bottom)
+                                    .font(.subheadline)
+                                    
                                 Spacer()
                                 Button {
                                     product.isCheck.toggle()
@@ -56,7 +57,10 @@ struct AddRoutineView: View {
                             }
                             
                             TextField("Product Name", text: $product.productName)
+                                .font(.title3)
+                                .disableAutocorrection(true)
                         }
+                        .padding(.bottom)
                     }
                 }
                 AddProductButton(title: "Add New Product") {
@@ -74,6 +78,7 @@ struct AddRoutineView: View {
                     routine.time = newTime
                     print("\(routine.time)")
                     self.presentationMode.wrappedValue.dismiss()
+                    
                 }
                 Spacer()
             }
